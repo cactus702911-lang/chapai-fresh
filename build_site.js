@@ -31,6 +31,7 @@ const aboutTemplate = readTemplate('about.html');
 const contactTemplate = readTemplate('contact.html');
 const blogTemplate = readTemplate('blog.html');
 const blogDetailTemplate = readTemplate('blog_detail.html');
+const error404Template = readTemplate('404.html');
 
 // Helper to generate star ratings
 function generateStarsHTML(rating) {
@@ -335,12 +336,60 @@ siteData.products.forEach(prod => {
     relatedHTML = `<p class="col-span-full text-sm text-slate-400 italic font-sans">কোনো সম্পর্কিত পণ্য পাওয়া যায়নি।</p>`;
   }
 
+  // Generate dynamic JSON-LD Product & Review schema
+  const schemaObj = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": prod.name,
+    "image": (prod.images || [prod.image]).map(img => `https://chapaifresh.com/${img}`),
+    "description": prod.shortDescription || prod.description,
+    "sku": prod.id,
+    "offers": {
+      "@type": "Offer",
+      "url": `https://chapaifresh.com/product/${prod.id}`,
+      "priceCurrency": "BDT",
+      "price": prod.price,
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": prod.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+    }
+  };
+
+  if (reviewsCount > 0) {
+    schemaObj.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": rating,
+      "reviewCount": reviewsCount,
+      "bestRating": "5",
+      "worstRating": "1"
+    };
+    schemaObj.review = productReviews.map(r => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": r.name
+      },
+      "datePublished": r.date,
+      "reviewBody": r.text,
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": r.rating,
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }));
+  }
+  
+  const productSchemaJSON = `<script type="application/ld+json">\n${JSON.stringify(schemaObj, null, 2)}\n</script>`;
+
   let prodContent = productTemplate
     .replace(/\{\{PRODUCT_ID\}\}/g, prod.id)
     .replace(/\{\{PRODUCT_NAME\}\}/g, prod.name)
     .replace(/\{\{PRODUCT_CATEGORY_ID\}\}/g, cat.id)
     .replace(/\{\{PRODUCT_CATEGORY_NAME\}\}/g, cat.name)
     .replace(/\{\{PRODUCT_IMAGE\}\}/g, prod.image)
+    .replace(/\{\{PRODUCT_IMAGES_LIST_JSON\}\}/g, JSON.stringify(prod.images || [prod.image]).replace(/'/g, "\\'"))
+    .replace(/\{\{PRODUCT_SCHEMA_JSON\}\}/g, productSchemaJSON)
     .replace(/\{\{PRODUCT_PRICE\}\}/g, prod.price)
     .replace(/\{\{PRODUCT_ORIGINAL_PRICE\}\}/g, prod.originalPrice)
     .replace(/\{\{PRODUCT_UNIT\}\}/g, prod.unit)
@@ -375,6 +424,10 @@ fs.writeFileSync(
 fs.writeFileSync(
   path.join(__dirname, 'contact.html'),
   compilePage(contactTemplate, 'যোগাযোগ', 'পাইকারি অর্ডার বা যেকোনো জিজ্ঞাসার জন্য আমাদের সাথে যোগাযোগ করুন।', '', 'contact')
+);
+fs.writeFileSync(
+  path.join(__dirname, '404.html'),
+  compilePage(error404Template, '৪০৪ - পেজটি পাওয়া যায়নি', 'দুঃখিত, পেজটি খুঁজে পাওয়া যায়নি!', '', '')
 );
 
 // ----------------------------------------------------

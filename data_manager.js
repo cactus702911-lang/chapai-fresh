@@ -72,6 +72,34 @@ if (action === 'get') {
     // Assign a unique review ID
     const timestamp = Date.now();
     newReview.id = 'rev-' + timestamp;
+
+    // Decode review image if present
+    if (newReview.imageData) {
+      try {
+        const matches = newReview.imageData.match(/^data:image\/([A-Za-z+]+);base64,(.+)$/);
+        if (matches && matches.length === 3) {
+          const ext = matches[1] === 'jpeg' ? 'jpg' : (matches[1] || 'png');
+          const base64Data = matches[2];
+          const buffer = Buffer.from(base64Data, 'base64');
+          
+          const reviewsDir = path.join(__dirname, 'images', 'reviews');
+          if (!fs.existsSync(reviewsDir)) {
+            fs.mkdirSync(reviewsDir, { recursive: true });
+          }
+          
+          const fileName = `${newReview.id}.${ext}`;
+          const filePath = path.join(reviewsDir, fileName);
+          fs.writeFileSync(filePath, buffer);
+          
+          newReview.image = `images/reviews/${fileName}`;
+        }
+      } catch (imgErr) {
+        console.error('Error saving review image:', imgErr.message);
+      }
+      
+      delete newReview.imageData;
+      delete newReview.imageName;
+    }
     
     // Unshift to place new review at the beginning
     siteData.reviews.unshift(newReview);

@@ -70,3 +70,18 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Premium micro-animations */
+.hover-tilt {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.hover-tilt:hover {
+  transform: translateY(-4px) scale(1.02) rotate(0.5deg);
+  box-shadow: 0 15px 30px -10px rgba(44, 94, 59, 0.2);
+}
+
+/* Active click state transitions for buttons */
+button:active, .btn-active:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}

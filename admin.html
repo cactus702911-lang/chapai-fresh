@@ -461,7 +461,17 @@
                         <!-- Review Date -->
                         <td class="px-6 py-4 text-xs text-slate-500 whitespace-nowrap" x-text="rev.date"></td>
                         <!-- Review Text -->
-                        <td class="px-6 py-4 text-xs text-slate-650 max-w-xs truncate" :title="rev.text" x-text="rev.text"></td>
+                        <td class="px-6 py-4 text-xs text-slate-650 max-w-xs">
+                          <div class="truncate" :title="rev.text" x-text="rev.text"></div>
+                          <template x-if="rev.image">
+                            <div class="mt-1.5 flex items-center gap-1.5">
+                              <span class="text-[10px] text-slate-400 font-sans">সংযুক্ত ছবি:</span>
+                              <a :href="rev.image" target="_blank" class="inline-block">
+                                <img :src="rev.image" class="w-8 h-8 rounded object-cover bg-slate-50 border border-slate-200 hover:opacity-80 transition-opacity">
+                              </a>
+                            </div>
+                          </template>
+                        </td>
                         <!-- Actions -->
                         <td class="px-6 py-4 text-right whitespace-nowrap">
                           <div class="flex items-center justify-end gap-2">
@@ -745,6 +755,16 @@
           <label class="block text-xs font-semibold text-slate-500">Review Content</label>
           <textarea x-model="productReviewForm.text" rows="4" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-1 focus:ring-brand-500" placeholder="Write review description..."></textarea>
         </div>
+
+        <template x-if="productReviewForm.image">
+          <div class="space-y-1">
+            <label class="block text-xs font-semibold text-slate-500">Uploaded Review Image</label>
+            <div class="flex items-center gap-3">
+              <img :src="productReviewForm.image" class="w-16 h-16 rounded object-cover bg-slate-50 border border-slate-200">
+              <button @click="productReviewForm.image = ''" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-lg text-xs font-bold transition-all">Remove Image</button>
+            </div>
+          </div>
+        </template>
 
       </div>
       <div class="px-6 py-4 border-t border-slate-100 bg-slate-50 flex justify-end gap-3">

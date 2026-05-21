@@ -94,7 +94,53 @@
 
   <!-- Page Content -->
   <main class="flex-grow">
-    <!-- Breadcrumbs -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Chapai Nakshi Pitha",
+  "image": [
+    "https://chapaifresh.com/images/product-pitha.jpg",
+    "https://chapaifresh.com/images/cat-sweets.jpg"
+  ],
+  "description": "চালের গুঁড়ো দিয়ে শৈল্পিক নকশায় তৈরি এবং খেজুরের খাঁটি গুড়ের রসে ভেজানো মুচমুচে ঐতিহ্যবাহী মিষ্টি পিঠা।",
+  "sku": "nakshi-pitha",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://chapaifresh.com/product/nakshi-pitha",
+    "priceCurrency": "BDT",
+    "price": 350,
+    "priceValidUntil": "2027-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "reviewCount": 1,
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Tahmina Akhter"
+      },
+      "datePublished": "মে ১২, ২০২৬",
+      "reviewBody": "নকশাগুলো দেখতে যেমন সুন্দর, খেতেও তেমন মুচমুচে ও সুস্বাদু!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": 5,
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  ]
+}
+</script>
+<!-- Breadcrumbs -->
 <div class="bg-brand-50 border-b border-brand-100 py-4">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs sm:text-sm text-slate-500 font-sans">
     <a href="../index" class="hover:text-brand-500 transition-colors">হোম</a>
@@ -108,12 +154,66 @@
 </div>
 
 <!-- Product Details Section -->
-<section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" x-data="{ qty: 1, reviewsCount: 1, rating: 5 }" @review-submitted.window="reviewsCount = $event.detail.count; rating = $event.detail.rating">
+<section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" 
+         x-data="{ 
+           qty: 1, 
+           reviewsCount: 1, 
+           rating: 5,
+           images: ["images/product-pitha.jpg","images/cat-sweets.jpg"],
+           activeImageIdx: 0,
+           zoom: false,
+           bgPos: '0% 0%'
+         }" 
+         @review-submitted.window="reviewsCount = $event.detail.count; rating = $event.detail.rating">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-3xl border border-brand-100 p-6 sm:p-10 shadow-xs">
     
-    <!-- Left Column: Product Image -->
-    <div class="flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 p-4 min-h-[300px] sm:min-h-[400px]">
-      <img src="../images/product-pitha.jpg" fetchpriority="high" width="400" height="400" alt="Chapai Nakshi Pitha" class="max-h-[350px] w-auto object-contain hover:scale-105 transition-transform duration-300">
+    <!-- Left Column: Product Image & Gallery -->
+    <div class="flex flex-col justify-between">
+      <div 
+        class="relative flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 p-4 min-h-[300px] sm:min-h-[400px] cursor-zoom-in"
+        @mousemove="
+          const rect = $el.getBoundingClientRect();
+          const x = ((($event.clientX - rect.left) / rect.width) * 100).toFixed(2);
+          const y = ((($event.clientY - rect.top) / rect.height) * 100).toFixed(2);
+          bgPos = x + '% ' + y + '%';
+        "
+        @mouseenter="zoom = true"
+        @mouseleave="zoom = false"
+      >
+        <!-- Main Display Image (visible when not zoomed) -->
+        <img 
+          :src="'../' + images[activeImageIdx]" 
+          fetchpriority="high" 
+          alt="Chapai Nakshi Pitha" 
+          class="max-h-[350px] w-auto object-contain transition-all duration-300"
+          :class="zoom ? 'opacity-0 scale-95' : 'opacity-100 scale-100'"
+        >
+        
+        <!-- Zoom Overlay (visible on hover) -->
+        <div 
+          x-show="zoom" 
+          class="absolute inset-0 bg-no-repeat transition-opacity duration-150 pointer-events-none"
+          :style="{
+            backgroundImage: `url('../' + images[activeImageIdx])`,
+            backgroundPosition: bgPos,
+            backgroundSize: '200%'
+          }"
+          x-transition
+        ></div>
+      </div>
+      
+      <!-- Thumbnails Selector -->
+      <div class="flex gap-2.5 mt-4 justify-center" x-show="images.length > 1">
+        <template x-for="(img, idx) in images" :key="idx">
+          <button 
+            @click="activeImageIdx = idx" 
+            class="w-16 h-16 rounded-xl overflow-hidden border-2 bg-white p-1 hover:border-brand-400 focus:outline-none transition-all duration-200"
+            :class="activeImageIdx === idx ? 'border-brand-500 ring-2 ring-brand-100' : 'border-slate-150'"
+          >
+            <img :src="'../' + img" alt="" class="w-full h-full object-contain">
+          </button>
+        </template>
+      </div>
     </div>
 
     <!-- Right Column: Details -->
@@ -182,6 +282,38 @@
       <!-- Out of stock indicator -->
       <div x-show="!true" class="bg-rose-50 border border-rose-100 text-rose-600 p-4 rounded-xl text-center text-sm font-semibold" x-cloak>
         ⚠️ দুঃখিত, এই পণ্যটি বর্তমানে স্টকে নেই। আমরা নতুন ব্যাচ প্রস্তুত করছি!
+      </div>
+
+      <!-- Trust Badges Grid -->
+      <div class="grid grid-cols-2 gap-3 border-t border-slate-100 pt-5 font-sans">
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🛡️</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">ফরমালিন মুক্ত</h4>
+            <p class="text-[10px] text-slate-500">১০০% কেমিক্যাল মুক্ত</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🤝</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">ক্যাশ অন ডেলিভারি</h4>
+            <p class="text-[10px] text-slate-500">হাতে পেয়ে পেমেন্ট</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🔄</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">সহজ রিটার্ন</h4>
+            <p class="text-[10px] text-slate-500">২৪ ঘণ্টার মধ্যে সমাধান</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🌾</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">সরাসরি বাগান থেকে</h4>
+            <p class="text-[10px] text-slate-500">চাঁপাইনবাবগঞ্জের নিজস্ব বাগান</p>
+          </div>
+        </div>
       </div>
 
       <!-- Extra Info -->
@@ -270,6 +402,23 @@
           <textarea id="review-text" x-model="newText" rows="3" placeholder="খাবারের স্বাদ, মান ও ডেলিভারি সম্পর্কে আপনার অভিজ্ঞতা লিখুন..." class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-1 focus:ring-brand-400 focus:border-brand-400"></textarea>
         </div>
 
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">ছবি আপলোড করুন (ঐচ্ছিক)</label>
+          <div class="flex items-center gap-3">
+            <button type="button" @click="document.getElementById('review-image-upload').click()" class="px-4 py-2 border border-slate-200 hover:border-brand-400 hover:bg-brand-50/50 rounded-lg text-xs text-slate-600 font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>📷</span> ছবি সিলেক্ট করুন
+            </button>
+            <input type="file" id="review-image-upload" accept="image/*" @change="handleImageSelect($event)" class="hidden">
+            
+            <template x-if="newImageBase64">
+              <div class="relative w-12 h-12 rounded-lg border border-slate-200 overflow-hidden bg-slate-50">
+                <img :src="newImageBase64" class="w-full h-full object-cover">
+                <button type="button" @click="removeSelectedImage()" class="absolute -top-1 -right-1 bg-rose-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] hover:bg-rose-600" aria-label="Remove image">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+
         <button @click="submitReview()" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-2.5 rounded-lg text-xs font-bold transition-all active:scale-98 shadow-sm">রিভিউ সাবমিট করুন</button>
       </div>
     </div>
@@ -297,6 +446,14 @@
               <span class="text-[10px] text-slate-400" x-text="review.date"></span>
             </div>
             <p class="text-xs text-slate-600 leading-relaxed font-sans" x-text="review.text"></p>
+            <template x-if="review.image">
+              <div class="mt-2 max-w-[120px] rounded-lg overflow-hidden border border-slate-150 bg-slate-50 cursor-pointer hover:opacity-90 transition-opacity">
+                <img :src="review.image.startsWith('data:image/') ? review.image : '../' + review.image" 
+                     alt="Review image" 
+                     class="w-full h-auto object-contain max-h-[80px]"
+                     @click="window.open(review.image.startsWith('data:image/') ? review.image : '../' + review.image, '_blank')">
+              </div>
+            </template>
           </div>
         </template>
       </div>
@@ -377,6 +534,8 @@
       newRating: 5,
       newName: '',
       newText: '',
+      newImageBase64: '',
+      newImageName: '',
       totalReviewsCount: compiledCount || 0,
       averageRating: compiledRating || 0,
       starsCount: {5:0, 4:0, 3:0, 2:0, 1:0},
@@ -428,6 +587,30 @@
         this.starsCount = dist;
       },
       
+      handleImageSelect(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        if (file.size > 2 * 1024 * 1024) { // 2MB limit
+          alert('অনুগ্রহ করে ২ মেগাবাইটের কম সাইজের ছবি নির্বাচন করুন।');
+          return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.newImageBase64 = e.target.result;
+          this.newImageName = file.name;
+        };
+        reader.readAsDataURL(file);
+      },
+      
+      removeSelectedImage() {
+        this.newImageBase64 = '';
+        this.newImageName = '';
+        const fileInput = document.getElementById('review-image-upload');
+        if (fileInput) fileInput.value = '';
+      },
+      
       submitReview() {
         if (!this.newName.trim()) {
           alert('অনুগ্রহ করে আপনার নাম লিখুন।');
@@ -442,7 +625,8 @@
           name: this.newName.trim(),
           rating: parseInt(this.newRating),
           date: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }),
-          text: this.newText.trim()
+          text: this.newText.trim(),
+          image: this.newImageBase64 ? this.newImageBase64 : ''
         };
         
         // Add to local browser storage so the customer sees it instantly
@@ -476,7 +660,9 @@
             name: newReview.name,
             rating: newReview.rating,
             date: newReview.date,
-            text: newReview.text
+            text: newReview.text,
+            imageData: this.newImageBase64 ? this.newImageBase64 : null,
+            imageName: this.newImageName ? this.newImageName : null
           })
         }).then(res => {
           if (res.ok) {
@@ -490,6 +676,7 @@
         this.newName = '';
         this.newText = '';
         this.newRating = 5;
+        this.removeSelectedImage();
         
         alert('আপনার রিভিউটি সফলভাবে সাবমিট করা হয়েছে। ধন্যবাদ!');
       }
@@ -676,6 +863,22 @@
                 <div class="space-y-1">
                   <label for="checkout-address" class="block text-xs font-semibold text-slate-500">ডেলিভারির ঠিকানা <span class="text-rose-500">*</span></label>
                   <textarea id="checkout-address" x-model="customerAddress" rows="2" placeholder="বাড়ি/গ্রাম, রাস্তা, থানা, জেলা" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 focus:ring-1 focus:ring-brand-400 focus:border-brand-400 outline-none"></textarea>
+                </div>
+                
+                <!-- Cart Trust Badges -->
+                <div class="grid grid-cols-3 gap-2 pt-3 border-t border-brand-100/50 text-[10px] text-slate-500 font-sans text-center">
+                  <div class="flex flex-col items-center p-2 bg-white rounded-xl border border-brand-100 shadow-xs">
+                    <span class="text-base mb-1">🤝</span>
+                    <span class="font-bold text-slate-700">ক্যাশ অন ডেলিভারি</span>
+                  </div>
+                  <div class="flex flex-col items-center p-2 bg-white rounded-xl border border-brand-100 shadow-xs">
+                    <span class="text-base mb-1">📦</span>
+                    <span class="font-bold text-slate-700">নিরাপদ প্যাকেজিং</span>
+                  </div>
+                  <div class="flex flex-col items-center p-2 bg-white rounded-xl border border-brand-100 shadow-xs">
+                    <span class="text-base mb-1">🌱</span>
+                    <span class="font-bold text-slate-700">১০০% অর্গানিক</span>
+                  </div>
                 </div>
               </div>
 
