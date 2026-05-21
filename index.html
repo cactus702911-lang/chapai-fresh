@@ -42,7 +42,7 @@
       <div class="flex items-center justify-between h-20">
         
         <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-2 group">
+        <a href="index" class="flex items-center gap-2 group">
           <span class="text-2xl font-bold font-serif tracking-tight text-brand-500 group-hover:text-brand-600 transition-colors">
             🌾 Chapai Fresh
           </span>
@@ -50,11 +50,12 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-brand-500 font-semibold border-b-2 border-brand-500">হোম</a>
-          <a href="shop.html" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">শপ</a>
-          <a href="index.html#categories" class="text-sm font-medium hover:text-brand-500 transition-colors py-2">ক্যাটাগরি</a>
-          <a href="about.html" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">আমাদের সম্পর্কে</a>
-          <a href="contact.html" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">যোগাযোগ</a>
+          <a href="index" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-brand-500 font-semibold border-b-2 border-brand-500">হোম</a>
+          <a href="shop" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">শপ</a>
+          <a href="index#categories" class="text-sm font-medium hover:text-brand-500 transition-colors py-2">ক্যাটাগরি</a>
+          <a href="about" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">আমাদের সম্পর্কে</a>
+          <a href="blog" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">ব্লগ</a>
+          <a href="contact" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">যোগাযোগ</a>
         </nav>
 
         <!-- Right Side Icons -->
@@ -82,11 +83,12 @@
 
     <!-- Mobile Navigation Panel -->
     <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" class="md:hidden bg-white border-b border-brand-100 px-4 pt-2 pb-4 space-y-1 shadow-lg" x-cloak>
-      <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">হোম</a>
-      <a href="shop.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">শপ</a>
-      <a href="index.html#categories" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ক্যাটাগরি</a>
-      <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">আমাদের সম্পর্কে</a>
-      <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">যোগাযোগ</a>
+      <a href="index" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">হোম</a>
+      <a href="shop" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">শপ</a>
+      <a href="index#categories" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ক্যাটাগরি</a>
+      <a href="about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">আমাদের সম্পর্কে</a>
+      <a href="blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ব্লগ</a>
+      <a href="contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">যোগাযোগ</a>
     </div>
   </header>
 
@@ -115,10 +117,10 @@
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-      <a href="shop.html" class="w-full sm:w-auto px-8 py-4 bg-accent-orange text-white rounded-full font-bold shadow-lg hover:bg-accent-orange/90 active:scale-98 transition-all">
+      <a href="shop" class="w-full sm:w-auto px-8 py-4 bg-accent-orange text-white rounded-full font-bold shadow-lg hover:bg-accent-orange/90 active:scale-98 transition-all">
         পণ্যগুলো কিনুন
       </a>
-      <a href="about.html" class="w-full sm:w-auto px-8 py-4 bg-white/10 text-white rounded-full font-bold border border-white/20 hover:bg-white/20 active:scale-98 transition-all">
+      <a href="about" class="w-full sm:w-auto px-8 py-4 bg-white/10 text-white rounded-full font-bold border border-white/20 hover:bg-white/20 active:scale-98 transition-all">
         আমাদের গল্প
       </a>
     </div>
@@ -135,7 +137,7 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     
-  <a href="category/fruits.html" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
+  <a href="category/fruits" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
     <img src="images/cat-fruits.jpg" alt="Fresh Fruits" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
     <div class="absolute bottom-5 left-5 right-5">
@@ -145,7 +147,7 @@
     </div>
   </a>
   
-  <a href="category/sweets.html" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
+  <a href="category/sweets" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
     <img src="images/cat-sweets.jpg" alt="Traditional Sweets" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
     <div class="absolute bottom-5 left-5 right-5">
@@ -155,7 +157,7 @@
     </div>
   </a>
   
-  <a href="category/pickles.html" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
+  <a href="category/pickles" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
     <img src="images/cat-pickles.jpg" alt="Organic Pickles" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
     <div class="absolute bottom-5 left-5 right-5">
@@ -165,7 +167,7 @@
     </div>
   </a>
   
-  <a href="category/dryfoods.html" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
+  <a href="category/dryfoods" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
     <img src="images/cat-dryfoods.jpg" alt="Dry Foods" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
     <div class="absolute bottom-5 left-5 right-5">
@@ -186,7 +188,7 @@
         <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">ক্রেতাদের প্রিয়</span>
         <h2 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600">সবচেয়ে জনপ্রিয় পণ্যসমূহ</h2>
       </div>
-      <a href="shop.html" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-500 transition-colors group">
+      <a href="shop" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-50 transition-colors group">
         সব পণ্য দেখুন 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-1 transition-transform">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -213,7 +215,7 @@
     </div>
     
     <!-- Image -->
-    <a href="product/himsagar-mango.html" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+    <a href="product/himsagar-mango" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
       <img src="images/product-mango.jpg" alt="Khaas Himsagar Mango" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
@@ -224,7 +226,7 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(2)</span>
         </div>
-        <a href="product/himsagar-mango.html" class="block mt-1">
+        <a href="product/himsagar-mango" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Khaas Himsagar Mango</h3>
         </a>
       </div>
@@ -269,7 +271,7 @@
     </div>
     
     <!-- Image -->
-    <a href="product/chapai-aamshotto.html" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+    <a href="product/chapai-aamshotto" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
       <img src="images/product-aampapad.jpg" alt="Chapai Aamshotto / Mango Bar" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
@@ -280,7 +282,7 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(3)</span>
         </div>
-        <a href="product/chapai-aamshotto.html" class="block mt-1">
+        <a href="product/chapai-aamshotto" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Chapai Aamshotto / Mango Bar</h3>
         </a>
       </div>
@@ -325,7 +327,7 @@
     </div>
     
     <!-- Image -->
-    <a href="product/garlic-mango-pickle.html" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+    <a href="product/garlic-mango-pickle" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
       <img src="images/product-pickle.jpg" alt="Handmade Garlic Mango Pickle" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
@@ -336,7 +338,7 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(1)</span>
         </div>
-        <a href="product/garlic-mango-pickle.html" class="block mt-1">
+        <a href="product/garlic-mango-pickle" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Handmade Garlic Mango Pickle</h3>
         </a>
       </div>
@@ -381,7 +383,7 @@
     </div>
     
     <!-- Image -->
-    <a href="product/special-sandesh.html" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+    <a href="product/special-sandesh" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
       <img src="images/product-sandesh.jpg" alt="Chapai Special Sandesh" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
@@ -392,7 +394,7 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(1)</span>
         </div>
-        <a href="product/special-sandesh.html" class="block mt-1">
+        <a href="product/special-sandesh" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Chapai Special Sandesh</h3>
         </a>
       </div>
@@ -476,7 +478,7 @@
         ভোরে গাছ থেকে পাড়া এবং একই দিনে পাঠানো একদম তাজা ও মিষ্টি হিমসাগর, ল্যাংড়া এবং গোপালভোগ আম অর্ডার করুন।
       </p>
       <div>
-        <a href="category/fruits.html" class="inline-block px-8 py-3 bg-brand-500 text-white rounded-full font-bold shadow-lg hover:bg-brand-600 transition-all active:scale-98">
+        <a href="category/fruits" class="inline-block px-8 py-3 bg-brand-500 text-white rounded-full font-bold shadow-lg hover:bg-brand-600 transition-all active:scale-98">
           আম অর্ডার করুন
         </a>
       </div>
@@ -614,10 +616,10 @@
         <div class="space-y-4 font-sans">
           <h4 class="text-white text-base font-semibold tracking-wide font-sans">কুইক লিংক</h4>
           <ul class="space-y-2 text-sm text-brand-200/80">
-            <li><a href="index.html" class="hover:text-white transition-colors">হোম</a></li>
-            <li><a href="shop.html" class="hover:text-white transition-colors">শপ ক্যাটালগ</a></li>
-            <li><a href="about.html" class="hover:text-white transition-colors">আমাদের সম্পর্কে</a></li>
-            <li><a href="contact.html" class="hover:text-white transition-colors">যোগাযোগের বিবরণ</a></li>
+            <li><a href="index" class="hover:text-white transition-colors">হোম</a></li>
+            <li><a href="shop" class="hover:text-white transition-colors">শপ ক্যাটালগ</a></li>
+            <li><a href="about" class="hover:text-white transition-colors">আমাদের সম্পর্কে</a></li>
+            <li><a href="contact" class="hover:text-white transition-colors">যোগাযোগের বিবরণ</a></li>
           </ul>
         </div>
 
@@ -625,10 +627,10 @@
         <div class="space-y-4 font-sans">
           <h4 class="text-white text-base font-semibold tracking-wide font-sans">ক্যাটাগরি</h4>
           <ul class="space-y-2 text-sm text-brand-200/80">
-            <li><a href="category/fruits.html" class="hover:text-white transition-colors">Fresh Fruits</a></li>
-<li><a href="category/sweets.html" class="hover:text-white transition-colors">Traditional Sweets</a></li>
-<li><a href="category/pickles.html" class="hover:text-white transition-colors">Organic Pickles</a></li>
-<li><a href="category/dryfoods.html" class="hover:text-white transition-colors">Dry Foods</a></li>
+            <li><a href="category/fruits" class="hover:text-white transition-colors">Fresh Fruits</a></li>
+<li><a href="category/sweets" class="hover:text-white transition-colors">Traditional Sweets</a></li>
+<li><a href="category/pickles" class="hover:text-white transition-colors">Organic Pickles</a></li>
+<li><a href="category/dryfoods" class="hover:text-white transition-colors">Dry Foods</a></li>
 
           </ul>
         </div>

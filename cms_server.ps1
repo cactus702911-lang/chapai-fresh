@@ -30,8 +30,8 @@ try {
     $listener.Start()
     Write-Host "==========================================================" -ForegroundColor Green
     Write-Host "🌾 Chapai Fresh CMS Local Server Started!" -ForegroundColor Green
-    Write-Host "👉 Admin Panel:   http://localhost:$port/admin.html" -ForegroundColor Cyan
-    Write-Host "👉 Store Frontend: http://localhost:$port/index.html" -ForegroundColor Cyan
+    Write-Host "👉 Admin Panel:   http://localhost:$port/admin" -ForegroundColor Cyan
+    Write-Host "👉 Store Frontend: http://localhost:$port/" -ForegroundColor Cyan
     Write-Host "Press Ctrl+C in this terminal window to stop the server." -ForegroundColor Yellow
     Write-Host "==========================================================" -ForegroundColor Green
 
@@ -42,6 +42,23 @@ try {
         
         $path = $request.Url.LocalPath
         $method = $request.HttpMethod
+
+        # Redirect .html requests to extensionless counterparts (Clean URLs)
+        if ($path -like "*.html" -and $method -eq "GET") {
+            $cleanPath = $path.Substring(0, $path.Length - 5)
+            if ($cleanPath -eq "/index") {
+                $cleanPath = "/"
+            }
+            # Append query string if present
+            if ($request.Url.Query) {
+                $cleanPath = $cleanPath + $request.Url.Query
+            }
+            Write-Host "[Redirect] $path -> $cleanPath" -ForegroundColor Yellow
+            $response.StatusCode = 301
+            $response.Headers.Add("Location", $cleanPath)
+            $response.Close()
+            continue
+        }
 
         # Add CORS Headers for local development convenience
         $response.Headers.Add("Access-Control-Allow-Origin", "*")
@@ -248,6 +265,14 @@ try {
         # Clean path formatting and locate file on disk
         $cleanedPath = $localPath.Replace('/', '\').TrimStart('\')
         $filePath = Join-Path $PSScriptRoot $cleanedPath
+
+        # Check if file exists with .html extension for clean URLs
+        if (-not (Test-Path $filePath -PathType Leaf) -and -not [System.IO.Path]::GetExtension($filePath)) {
+            $htmlFilePath = $filePath + ".html"
+            if (Test-Path $htmlFilePath -PathType Leaf) {
+                $filePath = $htmlFilePath
+            }
+        }
 
         if (Test-Path $filePath -PathType Leaf) {
             $extension = [System.IO.Path]::GetExtension($filePath)

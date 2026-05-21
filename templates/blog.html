@@ -1,0 +1,25 @@
+<!-- Breadcrumbs -->
+<div class="bg-brand-50 border-b border-brand-100 py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs sm:text-sm text-slate-500 font-sans">
+    <a href="{{PATH_PREFIX}}index" class="hover:text-brand-500 transition-colors">হোম</a>
+    <span class="mx-2">/</span>
+    <span class="text-slate-800 font-medium">ব্লগ</span>
+  </div>
+</div>
+
+<!-- Header -->
+<section class="py-16 bg-white border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+    <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">আমাদের প্রবন্ধসমূহ</span>
+    <h1 class="text-3xl sm:text-5xl font-extrabold font-serif text-brand-600 tracking-tight">চাঁপাই ফ্রেশ ব্লগ</h1>
+    <p class="text-sm sm:text-base text-slate-500 max-w-xl mx-auto font-sans leading-relaxed">চাঁপাইনবাবগঞ্জের খাঁটি ঐতিহ্য, স্বাস্থ্য সচেতনতা এবং আমাদের খামারের গল্প নিয়ে আমাদের নিয়মিত লেখালেখি।</p>
+    <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full mt-4"></div>
+  </div>
+</section>
+
+<!-- Blog Grid Section -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {{BLOGS_GRID}}
+  </div>
+</section>

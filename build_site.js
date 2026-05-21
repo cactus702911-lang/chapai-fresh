@@ -15,6 +15,7 @@ try {
 // Ensure output directories exist
 fs.mkdirSync(path.join(__dirname, 'product'), { recursive: true });
 fs.mkdirSync(path.join(__dirname, 'category'), { recursive: true });
+fs.mkdirSync(path.join(__dirname, 'blog'), { recursive: true });
 
 // 2. Read template files
 console.log('Reading templates...');
@@ -28,6 +29,8 @@ const productTemplate = readTemplate('product.html');
 const categoryTemplate = readTemplate('category.html');
 const aboutTemplate = readTemplate('about.html');
 const contactTemplate = readTemplate('contact.html');
+const blogTemplate = readTemplate('blog.html');
+const blogDetailTemplate = readTemplate('blog_detail.html');
 
 // Helper to generate star ratings
 function generateStarsHTML(rating) {
@@ -50,7 +53,7 @@ function generateStarsHTML(rating) {
 function compilePage(contentHTML, pageTitle, pageDesc, pathPrefix = '', activeNav = '', extraHead = '') {
   let footerCategoriesHTML = '';
   siteData.categories.forEach(cat => {
-    footerCategoriesHTML += `<li><a href="${pathPrefix}category/${cat.id}.html" class="hover:text-white transition-colors">${cat.name}</a></li>\n`;
+    footerCategoriesHTML += `<li><a href="${pathPrefix}category/${cat.id}" class="hover:text-white transition-colors">${cat.name}</a></li>\n`;
   });
 
   let html = layoutTemplate
@@ -77,6 +80,7 @@ function compilePage(contentHTML, pageTitle, pageDesc, pathPrefix = '', activeNa
     .replace(/\{\{NAV_ACTIVE_HOME\}\}/g, activeNav === 'home' ? 'text-brand-500 font-semibold border-b-2 border-brand-500' : 'text-slate-600')
     .replace(/\{\{NAV_ACTIVE_SHOP\}\}/g, activeNav === 'shop' ? 'text-brand-500 font-semibold border-b-2 border-brand-500' : 'text-slate-600')
     .replace(/\{\{NAV_ACTIVE_ABOUT\}\}/g, activeNav === 'about' ? 'text-brand-500 font-semibold border-b-2 border-brand-500' : 'text-slate-600')
+    .replace(/\{\{NAV_ACTIVE_BLOG\}\}/g, activeNav === 'blog' ? 'text-brand-500 font-semibold border-b-2 border-brand-500' : 'text-slate-600')
     .replace(/\{\{NAV_ACTIVE_CONTACT\}\}/g, activeNav === 'contact' ? 'text-brand-500 font-semibold border-b-2 border-brand-500' : 'text-slate-600');
 
   return html;
@@ -113,7 +117,7 @@ function renderProductCard(product, prefix = '', index = 0) {
     </div>
     
     <!-- Image -->
-    <a href="${prefix}product/${product.id}.html" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+    <a href="${prefix}product/${product.id}" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
       <img src="${prefix}${product.image}" alt="${product.name}" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
@@ -124,7 +128,7 @@ function renderProductCard(product, prefix = '', index = 0) {
           ${generateStarsHTML(rating)}
           <span class="text-slate-400 font-medium ml-1">(${reviewsCount})</span>
         </div>
-        <a href="${prefix}product/${product.id}.html" class="block mt-1">
+        <a href="${prefix}product/${product.id}" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">${product.name}</h3>
         </a>
       </div>
@@ -156,6 +160,41 @@ function renderProductCard(product, prefix = '', index = 0) {
   `;
 }
 
+// Generate blog card HTML
+function renderBlogCard(blog, prefix = '') {
+  return `
+  <div class="bg-white rounded-2xl border border-brand-100 overflow-hidden hover-glow flex flex-col justify-between group transition-custom">
+    <div>
+      <!-- Image -->
+      <a href="${prefix}blog/${blog.id}" class="block aspect-video w-full overflow-hidden bg-slate-50 border-b border-slate-50">
+        <img src="${prefix}${blog.image}" alt="${blog.title}" loading="lazy" width="400" height="250" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
+      </a>
+      
+      <!-- Details -->
+      <div class="p-6 space-y-3">
+        <div class="flex items-center justify-between text-[11px] font-semibold text-slate-400 font-sans">
+          <span class="px-2.5 py-0.5 bg-brand-50 text-brand-600 rounded-full">${blog.category}</span>
+          <span>${blog.date}</span>
+        </div>
+        <a href="${prefix}blog/${blog.id}" class="block">
+          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-serif">${blog.title}</h3>
+        </a>
+        <p class="text-xs text-slate-500 leading-relaxed font-sans line-clamp-3">${blog.excerpt}</p>
+      </div>
+    </div>
+    
+    <div class="px-6 pb-6 pt-2">
+      <a href="${prefix}blog/${blog.id}" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:text-brand-500 transition-all group-hover:translate-x-0.5 duration-300">
+        আরও পড়ুন 
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+  `;
+}
+
 // ----------------------------------------------------
 // BUILD HOMEPAGE (index.html)
 // ----------------------------------------------------
@@ -163,7 +202,7 @@ console.log('Generating index.html...');
 let categoriesGridHTML = '';
 siteData.categories.forEach(cat => {
   categoriesGridHTML += `
-  <a href="category/${cat.id}.html" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
+  <a href="category/${cat.id}" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
     <img src="${cat.image}" alt="${cat.name}" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
     <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
     <div class="absolute bottom-5 left-5 right-5">
@@ -337,6 +376,52 @@ fs.writeFileSync(
   path.join(__dirname, 'contact.html'),
   compilePage(contactTemplate, 'যোগাযোগ', 'পাইকারি অর্ডার বা যেকোনো জিজ্ঞাসার জন্য আমাদের সাথে যোগাযোগ করুন।', '', 'contact')
 );
+
+// ----------------------------------------------------
+// BUILD BLOG PAGES (blog.html & blog/[id].html)
+// ----------------------------------------------------
+console.log('Generating blog.html and blog detail pages...');
+let blogsGridHTML = '';
+(siteData.blogs || []).forEach(blog => {
+  blogsGridHTML += renderBlogCard(blog, '');
+});
+
+let blogContent = blogTemplate
+  .replace(/\{\{BLOGS_GRID\}\}/g, blogsGridHTML);
+
+fs.writeFileSync(
+  path.join(__dirname, 'blog.html'),
+  compilePage(blogContent, 'ব্লগ', 'চাঁপাইনবাবগঞ্জের আমের খবর, মিষ্টির ঐতিহ্য এবং সুস্বাদু রেসিপি নিয়ে প্রবন্ধসমূহ।', '', 'blog')
+);
+
+(siteData.blogs || []).forEach(blog => {
+  // Generate related blogs (excluding current)
+  let relatedBlogs = (siteData.blogs || []).filter(b => b.id !== blog.id).slice(0, 3);
+  let relatedBlogsHTML = '';
+  relatedBlogs.forEach(rel => {
+    relatedBlogsHTML += renderBlogCard(rel, '../');
+  });
+  if (!relatedBlogsHTML) {
+    relatedBlogsHTML = `<p class="col-span-full text-sm text-slate-400 italic font-sans">কোনো সম্পর্কিত ব্লগ পাওয়া যায়নি।</p>`;
+  }
+
+  let blogDetailContent = blogDetailTemplate
+    .replace(/\{\{BLOG_TITLE\}\}/g, blog.title)
+    .replace(/\{\{BLOG_CATEGORY\}\}/g, blog.category)
+    .replace(/\{\{BLOG_AUTHOR\}\}/g, blog.author)
+    .replace(/\{\{BLOG_DATE\}\}/g, blog.date)
+    .replace(/\{\{BLOG_READ_TIME\}\}/g, blog.readTime)
+    .replace(/\{\{BLOG_IMAGE\}\}/g, blog.image)
+    .replace(/\{\{BLOG_CONTENT\}\}/g, blog.content)
+    .replace(/\{\{RELATED_BLOGS\}\}/g, relatedBlogsHTML);
+
+  const cleanMetaDesc = (blog.excerpt || blog.content).replace(/[\r\n]+/g, ' ').replace(/"/g, '&quot;').substring(0, 150) + '...';
+
+  fs.writeFileSync(
+    path.join(__dirname, 'blog', `${blog.id}.html`),
+    compilePage(blogDetailContent, blog.title, cleanMetaDesc, '../', 'blog', `<link rel="preload" as="image" href="../${blog.image}" fetchpriority="high">`)
+  );
+});
 
 // ----------------------------------------------------
 // COMPILE TAILWIND CSS
