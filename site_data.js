@@ -9,7 +9,7 @@ const siteData = {
     "facebookUrl": "https://facebook.com",
     "instagramUrl": "https://instagram.com",
     "tiktokUrl": "https://tiktok.com",
-    "footerAboutText": "Chapai Fresh brings you the finest, 100% organic and pure delicacies directly from the fertile lands of Chapai Nawabganj. We are committed to authenticity and quality.",
+    "footerAboutText": "চাঁপাই ফ্রেশ আপনার জন্য নিয়ে এসেছে চাঁপাইনবাবগঞ্জের উর্বর মাটি থেকে সরাসরি সংগৃহীত সেরা, ১০০% অর্গানিক এবং খাঁটি সুস্বাদু খাবার। আমরা বিশুদ্ধতা এবং গুণগত মান বজায় রাখতে প্রতিশ্রুতিবদ্ধ।",
     "insideChapaiDeliveryFee": 60,
     "outsideChapaiDeliveryFee": 130,
     "logoImage": "images/logo/logo.png",
@@ -188,25 +188,25 @@ const siteData = {
   ],
   "testimonials": [
     {
-      "name": "Anisur Rahman",
-      "text": "The Himsagar mangoes were absolutely mouthwatering! No fibers, super sweet, and smelled like pure summer. Highly recommended!",
+      "name": "আনিসুর রহমান",
+      "text": "হিমসাগর আমগুলো সত্যিই অসাধারণ সুস্বাদু ছিল! কোনো আঁশ নেই, অসম্ভব মিষ্টি এবং ঘ্রাণে একদম খাঁটি। সবার জন্য অত্যন্ত প্রশংসনীয়!",
       "rating": 5,
-      "date": "May 15, 2026",
-      "designation": "Dhaka"
+      "date": "১৫ মে, ২০২৬",
+      "designation": "ঢাকা"
     },
     {
-      "name": "Fahmida Chowdhury",
-      "text": "Ordered the Sandesh and Aamshotto. The sweets had the perfect amount of sugar and the texture was incredible. The package arrived in Dhaka within 24 hours!",
+      "name": "ফাহমিদা চৌধুরী",
+      "text": "সন্দেশ এবং আমসত্ত্ব অর্ডার করেছিলাম। মিষ্টিগুলোতে চিনির পরিমাণ একদম পারফেক্ট ছিল এবং টেক্সচারটাও ছিল চমৎকার। ২৪ ঘণ্টার মধ্যেই সিলেটে প্যাকেজটি পেয়েছি!",
       "rating": 5,
-      "date": "May 10, 2026",
-      "designation": "Sylhet"
+      "date": "১০ মে, ২০২৬",
+      "designation": "সিলেট"
     },
     {
-      "name": "Sadman Sakib",
-      "text": "Outstanding quality. The mango pickle is exactly like the one my grandmother used to make. Smells heavenly with mustard oil. Will buy again.",
+      "name": "সাদমান সাকিব",
+      "text": "অসাধারণ কোয়ালিটি। আমের আচারটি একদম আমার দাদীর হাতের আচারের মতো লেগেছে। খাঁটি সরিষার তেলের চমৎকার ঘ্রাণ। নিঃসন্দেহে আবারো অর্ডার করব।",
       "rating": 5,
-      "date": "May 18, 2026",
-      "designation": "Chittagong"
+      "date": "১৮ মে, ২০২৬",
+      "designation": "চট্টগ্রাম"
     }
   ],
   "blogs": [
