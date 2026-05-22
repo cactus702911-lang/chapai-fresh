@@ -47,9 +47,22 @@ try {
             $path = $request.Url.LocalPath
             $method = $request.HttpMethod
 
-            # Redirect /index or /index/ directly to /
+            # Redirect / to /home
+            if ($path -eq "/" -and $method -eq "GET") {
+                $cleanPath = "/home"
+                if ($request.Url.Query) {
+                    $cleanPath = $cleanPath + $request.Url.Query
+                }
+                Write-Host "[Redirect] $path -> $cleanPath" -ForegroundColor Yellow
+                $response.StatusCode = 301
+                $response.Headers.Add("Location", $cleanPath)
+                $response.Close()
+                continue
+            }
+
+            # Redirect /index or /index/ directly to /home
             if ((($path -eq "/index") -or ($path -eq "/index/")) -and ($method -eq "GET")) {
-                $cleanPath = "/"
+                $cleanPath = "/home"
                 if ($request.Url.Query) {
                     $cleanPath = $cleanPath + $request.Url.Query
                 }
@@ -64,7 +77,7 @@ try {
             if ($path -like "*.html" -and $method -eq "GET") {
                 $cleanPath = $path.Substring(0, $path.Length - 5)
                 if ($cleanPath -eq "/index") {
-                    $cleanPath = "/"
+                    $cleanPath = "/home"
                 }
                 # Append query string if present
                 if ($request.Url.Query) {

@@ -1149,13 +1149,38 @@
             if (res.ok) {
               this.data = await res.json();
             } else {
-              alert('Failed to load database. Ensure local server is running.');
+              throw new Error('Local server API not available');
             }
           } catch (err) {
-            console.error(err);
+            console.warn('API error, trying to load static site_data.js:', err);
+            try {
+              await this.loadStaticSiteData();
+            } catch (staticErr) {
+              console.error('Static data load failed:', staticErr);
+              alert('Failed to load database. Ensure local server is running or site_data.js is present.');
+            }
           } finally {
             this.loading = false;
           }
+        },
+
+        loadStaticSiteData() {
+          return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'site_data.js?t=' + Date.now();
+            script.onload = () => {
+              if (window.siteData) {
+                this.data = window.siteData;
+                resolve();
+              } else {
+                reject(new Error('window.siteData is undefined'));
+              }
+            };
+            script.onerror = () => {
+              reject(new Error('Failed to load site_data.js script'));
+            };
+            document.head.appendChild(script);
+          });
         },
 
         renderCategoryOptions() {
@@ -1196,7 +1221,11 @@
             }
           } catch (err) {
             console.error(err);
-            alert('Failed to connect to the CMS server.');
+            if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
+              alert('Cannot save changes on a static hosting environment (like GitHub Pages). To edit products or settings, please run the CMS server locally using the start_cms.bat or cms_server.ps1 script, make your changes, and then commit and push the updated site_data.js to GitHub.');
+            } else {
+              alert('Failed to connect to the CMS server.');
+            }
             this.loading = false;
           }
         },
@@ -1212,6 +1241,11 @@
             }
           } catch (err) {
             console.error(err);
+            if (window.location.hostname.includes('github.io') || window.location.protocol === 'file:') {
+              alert('Cannot rebuild website on a static hosting environment (like GitHub Pages). Rebuilding is done automatically when running the CMS server locally.');
+            } else {
+              alert('Failed to connect to the CMS server.');
+            }
           } finally {
             this.building = false;
           }

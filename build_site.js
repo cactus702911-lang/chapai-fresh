@@ -65,7 +65,7 @@ function compilePage(contentHTML, pageTitle, pageDesc, pathPrefix = '', activeNa
     return pathPrefix + filePath;
   };
 
-  const homeURL = pathPrefix === '../' ? '../' : '/';
+  const homeURL = pathPrefix === '../' ? '../home' : '/home';
 
   let html = layoutTemplate
     .replace(/\{\{CONTENT\}\}/g, contentHTML)
@@ -261,9 +261,16 @@ let indexContent = indexTemplate
   .replace(/\{\{PRODUCTS_GRID\}\}/g, bestSellersGridHTML)
   .replace(/\{\{TESTIMONIALS_GRID\}\}/g, testimonialsGridHTML);
 
+const compiledHomepage = compilePage(indexContent, 'খাঁটি ও সুস্বাদু খাবারের ঠিকানা', 'চাঁপাইনবাবগঞ্জের খাঁটি ও অর্গানিক আম, ঐতিহ্যবাহী মিষ্টি, আচার এবং শুকনো খাবার কিনুন।', '', 'home', '<link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">');
+
 fs.writeFileSync(
   path.join(__dirname, 'index.html'), 
-  compilePage(indexContent, 'খাঁটি ও সুস্বাদু খাবারের ঠিকানা', 'চাঁপাইনবাবগঞ্জের খাঁটি ও অর্গানিক আম, ঐতিহ্যবাহী মিষ্টি, আচার এবং শুকনো খাবার কিনুন।', '', 'home', '<link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">')
+  compiledHomepage
+);
+
+fs.writeFileSync(
+  path.join(__dirname, 'home.html'), 
+  compiledHomepage
 );
 
 // ----------------------------------------------------

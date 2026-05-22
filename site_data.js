@@ -163,6 +163,27 @@ const siteData = {
       "inStock": true,
       "shortDescription": "স্থানীয় বাগান থেকে সংগৃহীত তাজা, রসালো ও ভিটামিন-সি সমৃদ্ধ পেয়ারা।",
       "description": "Crisp and juicy local guavas packed with vitamin C, picked fresh and delivered direct from local organic orchards."
+    },
+    {
+      "id": "test-gallery-mango",
+      "name": "Test Gallery Mango",
+      "category": "fruits",
+      "price": 99,
+      "originalPrice": 120,
+      "unit": "kg",
+      "image": "images/product-test-gallery-mango-1779422508528.gif",
+      "images": [
+        "images/product-test-gallery-mango-1779422508528.gif",
+        "images/product-test-gallery-mango-gallery-1-1779422508530.png",
+        "images/product-test-gallery-mango-gallery-2-1779422508531.png"
+      ],
+      "rating": 4.5,
+      "reviewsCount": 0,
+      "isBestSeller": false,
+      "isNew": true,
+      "inStock": true,
+      "shortDescription": "একটি পরীক্ষামূলক আম যা স্বয়ংক্রিয়ভাবে মুছে যাবে।",
+      "description": "Testing multiple image uploads and garbage collection."
     }
   ],
   "testimonials": [
