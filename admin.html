@@ -332,7 +332,7 @@
                 <div class="space-y-1">
                   <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Website Logo</label>
                   <div class="flex items-center gap-4 p-3 border border-slate-200 rounded-lg bg-slate-50/50">
-                    <img :src="data.settings.logoImage ? data.settings.logoImage : 'images/logo/logo.png'" alt="Logo Preview" class="w-12 h-12 object-contain bg-transparent rounded-lg border border-slate-200 shadow-sm flex-shrink-0">
+                    <img :src="data.settings.logoImage ? data.settings.logoImage : 'images/logo/logo.png'" alt="Logo Preview" class="w-12 h-12 object-contain bg-transparent flex-shrink-0">
                     <div class="flex-grow">
                       <input type="file" accept="image/*" @change="handleLogoUpload($event)" class="text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-600 hover:file:bg-brand-100 cursor-pointer w-full">
                       <p class="text-[10px] text-slate-400 mt-1">Recommended square PNG or SVG with transparent background.</p>
@@ -344,7 +344,7 @@
                 <div class="space-y-1">
                   <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">Website Favicon</label>
                   <div class="flex items-center gap-4 p-3 border border-slate-200 rounded-lg bg-slate-50/50">
-                    <img :src="data.settings.faviconImage ? data.settings.faviconImage : 'images/logo/favicon.png'" alt="Favicon Preview" class="w-8 h-8 object-contain bg-transparent rounded-lg border border-slate-200 shadow-sm flex-shrink-0">
+                    <img :src="data.settings.faviconImage ? data.settings.faviconImage : 'images/logo/favicon.png'" alt="Favicon Preview" class="w-8 h-8 object-contain bg-transparent flex-shrink-0">
                     <div class="flex-grow">
                       <input type="file" accept="image/*" @change="handleFaviconUpload($event)" class="text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-600 hover:file:bg-brand-100 cursor-pointer w-full">
                       <p class="text-[10px] text-slate-400 mt-1">Recommended square image (.png or .ico) - 32x32px or 64x64px.</p>
