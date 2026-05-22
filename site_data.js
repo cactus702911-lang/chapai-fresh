@@ -165,6 +165,25 @@ const siteData = {
       "description": "Crisp and juicy local guavas packed with vitamin C, picked fresh and delivered direct from local organic orchards."
     },
     {
+      "id": "fresh-litchi",
+      "name": "Khaas Chapai Litchi (খাঁটি রসালো লিচু)",
+      "category": "fruits",
+      "price": 240,
+      "originalPrice": 280,
+      "unit": "100 pcs",
+      "image": "images/product-litchi.png",
+      "images": [
+        "images/product-litchi.png"
+      ],
+      "rating": 4.9,
+      "reviewsCount": 0,
+      "isBestSeller": true,
+      "isNew": true,
+      "inStock": true,
+      "shortDescription": "চাঁপাইনবাবগঞ্জের বাগান থেকে সদ্য পাড়া শতভাগ ফরমালিন ও রাসায়নিকমুক্ত মিষ্টি রসালো লিচু।",
+      "description": "Premium quality sweet and juicy red litchis directly sourced from the organic orchards of Chapai Nawabganj. 100% natural, chemical-free and freshly packed."
+    },
+    {
       "id": "test-gallery-mango",
       "name": "Test Gallery Mango",
       "category": "fruits",

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>খাঁটি ও সুস্বাদু খাবারের ঠিকানা | Chapai Fresh</title>
-  <meta name="description" content="চাঁপাইনবাবগঞ্জের খাঁটি ও অর্গানিক আম, ঐতিহ্যবাহী মিষ্টি, আচার এবং শুকনো খাবার কিনুন।">
-  <link rel="preload" as="image" href="images/hero-bg.jpg" fetchpriority="high">
-  <link href="output.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="images/logo/favicon.png?v=1779424444992">
+  <title>Khaas Chapai Litchi (খাঁটি রসালো লিচু) | Chapai Fresh</title>
+  <meta name="description" content="Premium quality sweet and juicy red litchis directly sourced from the organic orchards of Chapai Nawabganj. 100% natural, chemical-free and freshly pa...">
+  <link rel="preload" as="image" href="../images/product-litchi.png" fetchpriority="high">
+  <link href="../output.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../images/logo/favicon.png?v=1779424445038">
   <!-- Alpine.js for interactive dropdowns, cart, mobile nav -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
@@ -43,8 +43,8 @@
       <div class="flex items-center justify-between h-20">
         
         <!-- Logo -->
-        <a href="home" class="flex items-center gap-2 group">
-          <img src="images/logo/logo.png?v=1779424444992" alt="Chapai Fresh" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-300">
+        <a href="../home" class="flex items-center gap-2 group">
+          <img src="../images/logo/logo.png?v=1779424445037" alt="Chapai Fresh" class="w-9 h-9 object-contain group-hover:scale-105 transition-transform duration-300">
           <span class="text-2xl font-bold font-serif tracking-tight text-brand-500 group-hover:text-brand-600 transition-colors">
             Chapai Fresh
           </span>
@@ -52,12 +52,12 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="home" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-brand-500 font-semibold border-b-2 border-brand-500">হোম</a>
-          <a href="shop" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">শপ</a>
-          <a href="home#categories" class="text-sm font-medium hover:text-brand-500 transition-colors py-2">ক্যাটাগরি</a>
-          <a href="about" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">আমাদের সম্পর্কে</a>
-          <a href="blog" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">ব্লগ</a>
-          <a href="contact" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">যোগাযোগ</a>
+          <a href="../home" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">হোম</a>
+          <a href="../shop" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">শপ</a>
+          <a href="../home#categories" class="text-sm font-medium hover:text-brand-500 transition-colors py-2">ক্যাটাগরি</a>
+          <a href="../about" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">আমাদের সম্পর্কে</a>
+          <a href="../blog" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">ব্লগ</a>
+          <a href="../contact" class="text-sm font-medium hover:text-brand-500 transition-colors py-2 text-slate-600">যোগাযোগ</a>
         </nav>
 
         <!-- Right Side Icons -->
@@ -85,121 +85,365 @@
 
     <!-- Mobile Navigation Panel -->
     <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4" class="md:hidden bg-white border-b border-brand-100 px-4 pt-2 pb-4 space-y-1 shadow-lg" x-cloak>
-      <a href="home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">হোম</a>
-      <a href="shop" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">শপ</a>
-      <a href="home#categories" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ক্যাটাগরি</a>
-      <a href="about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">আমাদের সম্পর্কে</a>
-      <a href="blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ব্লগ</a>
-      <a href="contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">যোগাযোগ</a>
+      <a href="../home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">হোম</a>
+      <a href="../shop" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">শপ</a>
+      <a href="../home#categories" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ক্যাটাগরি</a>
+      <a href="../about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">আমাদের সম্পর্কে</a>
+      <a href="../blog" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">ব্লগ</a>
+      <a href="../contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-500 hover:bg-brand-50 transition-colors">যোগাযোগ</a>
     </div>
   </header>
 
   <!-- Page Content -->
   <main class="flex-grow">
-    <!-- Hero Section -->
-<section class="relative min-h-[85vh] flex items-center justify-center bg-brand-950 text-white overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0 z-0">
-    <img src="images/hero-bg.jpg" fetchpriority="high" alt="Chapai Nawabganj Orchards" class="w-full h-full object-cover object-center opacity-40">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/70 to-transparent"></div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Khaas Chapai Litchi (খাঁটি রসালো লিচু)",
+  "image": [
+    "https://chapaifresh.com/images/product-litchi.png"
+  ],
+  "description": "চাঁপাইনবাবগঞ্জের বাগান থেকে সদ্য পাড়া শতভাগ ফরমালিন ও রাসায়নিকমুক্ত মিষ্টি রসালো লিচু।",
+  "sku": "fresh-litchi",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://chapaifresh.com/product/fresh-litchi",
+    "priceCurrency": "BDT",
+    "price": 240,
+    "priceValidUntil": "2027-12-31",
+    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+<!-- Breadcrumbs -->
+<div class="bg-brand-50 border-b border-brand-100 py-4">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs sm:text-sm text-slate-500 font-sans">
+    <a href="../home" class="hover:text-brand-500 transition-colors">হোম</a>
+    <span class="mx-2">/</span>
+    <a href="../shop" class="hover:text-brand-500 transition-colors">শপ</a>
+    <span class="mx-2">/</span>
+    <a href="../category/fruits" class="hover:text-brand-500 transition-colors">Fresh Fruits</a>
+    <span class="mx-2">/</span>
+    <span class="text-slate-800 font-medium">Khaas Chapai Litchi (খাঁটি রসালো লিচু)</span>
   </div>
+</div>
 
-  <div class="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-    <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-accent-orange/20 border border-accent-orange/30 text-accent-yellow tracking-wider uppercase">
-      🌾 ১০০% খাঁটি ও প্রকৃত
-    </span>
+<!-- Product Details Section -->
+<section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" 
+         x-data="{ 
+           qty: 1, 
+           reviewsCount: 0, 
+           rating: 5,
+           images: ['images/product-litchi.png'],
+           activeImageIdx: 0,
+           zoom: false,
+           bgPos: '0% 0%'
+         }" 
+         @review-submitted.window="reviewsCount = $event.detail.count; rating = $event.detail.rating">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-3xl border border-brand-100 p-6 sm:p-10 shadow-xs">
     
-    <h1 class="text-4xl sm:text-6xl font-extrabold font-serif tracking-tight leading-[1.1] text-white">
-      চাঁপাইনবাবগঞ্জের খাঁটি<br>
-      <span class="text-accent-yellow text-stroke-green">ও সুস্বাদু স্বাদ নিন</span>
-    </h1>
-    
-    <p class="max-w-2xl mx-auto text-base sm:text-lg text-brand-100/90 font-light leading-relaxed">
-      সরাসরি চাঁপাইনবাবগঞ্জের রৌদ্রোজ্জ্বল বাগান ও ঐতিহ্যবাহী রান্নাঘর থেকে সংগৃহীত অর্গানিক ফলমূল, ঐতিহ্যবাহী মিষ্টি, খাঁটি ঘি এবং আসল আচারের স্বাদ নিন।
-    </p>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-      <a href="shop" class="w-full sm:w-auto px-8 py-4 bg-accent-orange text-white rounded-full font-bold shadow-lg hover:bg-accent-orange/90 active:scale-98 transition-all">
-        পণ্যগুলো কিনুন
-      </a>
-      <a href="about" class="w-full sm:w-auto px-8 py-4 bg-white/10 text-white rounded-full font-bold border border-white/20 hover:bg-white/20 active:scale-98 transition-all">
-        আমাদের গল্প
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Finest Collections / Categories -->
-<section id="categories" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center space-y-2 mb-12">
-    <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">আপনার জন্য বাছাইকৃত</span>
-    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600">আমাদের সেরা কালেকশনসমূহ</h2>
-    <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full mt-4"></div>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    
-  <a href="category/fruits" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
-    <img src="images/cat-fruits.jpg" alt="Fresh Fruits" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
-    <div class="absolute bottom-5 left-5 right-5">
-      <span class="text-[10px] font-bold text-accent-yellow uppercase tracking-wider font-sans">কালেকশন</span>
-      <h3 class="text-lg font-bold text-white mt-0.5 font-serif">Fresh Fruits</h3>
-      <p class="text-xs text-brand-200/80 mt-1 leading-relaxed font-sans">Directly harvested from local orchards</p>
-    </div>
-  </a>
-  
-  <a href="category/sweets" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
-    <img src="images/cat-sweets.jpg" alt="Traditional Sweets" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
-    <div class="absolute bottom-5 left-5 right-5">
-      <span class="text-[10px] font-bold text-accent-yellow uppercase tracking-wider font-sans">কালেকশন</span>
-      <h3 class="text-lg font-bold text-white mt-0.5 font-serif">Traditional Sweets</h3>
-      <p class="text-xs text-brand-200/80 mt-1 leading-relaxed font-sans">Pure milk sweets made by master craftsmen</p>
-    </div>
-  </a>
-  
-  <a href="category/pickles" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
-    <img src="images/cat-pickles.jpg" alt="Organic Pickles" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
-    <div class="absolute bottom-5 left-5 right-5">
-      <span class="text-[10px] font-bold text-accent-yellow uppercase tracking-wider font-sans">কালেকশন</span>
-      <h3 class="text-lg font-bold text-white mt-0.5 font-serif">Organic Pickles</h3>
-      <p class="text-xs text-brand-200/80 mt-1 leading-relaxed font-sans">Sun-cured traditional pickles</p>
-    </div>
-  </a>
-  
-  <a href="category/dryfoods" class="relative group h-64 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-brand-100 block">
-    <img src="images/cat-dryfoods.jpg" alt="Dry Foods" loading="lazy" width="300" height="200" class="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500">
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-brand-950/20 to-transparent"></div>
-    <div class="absolute bottom-5 left-5 right-5">
-      <span class="text-[10px] font-bold text-accent-yellow uppercase tracking-wider font-sans">কালেকশন</span>
-      <h3 class="text-lg font-bold text-white mt-0.5 font-serif">Dry Foods</h3>
-      <p class="text-xs text-brand-200/80 mt-1 leading-relaxed font-sans">Preserved local delicacies</p>
-    </div>
-  </a>
-  
-  </div>
-</section>
-
-<!-- Best Selling Products -->
-<section class="py-20 bg-brand-50/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
-      <div class="space-y-2">
-        <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">ক্রেতাদের প্রিয়</span>
-        <h2 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600">সবচেয়ে জনপ্রিয় পণ্যসমূহ</h2>
+    <!-- Left Column: Product Image & Gallery -->
+    <div class="flex flex-col justify-between">
+      <div 
+        class="relative flex items-center justify-center bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 p-4 min-h-[300px] sm:min-h-[400px] cursor-zoom-in"
+        @mousemove="
+          const rect = $el.getBoundingClientRect();
+          const x = ((($event.clientX - rect.left) / rect.width) * 100).toFixed(2);
+          const y = ((($event.clientY - rect.top) / rect.height) * 100).toFixed(2);
+          bgPos = x + '% ' + y + '%';
+        "
+        @mouseenter="zoom = true"
+        @mouseleave="zoom = false"
+      >
+        <!-- Main Display Image (visible when not zoomed) -->
+        <img 
+          :src="'../' + images[activeImageIdx]" 
+          fetchpriority="high" 
+          alt="Khaas Chapai Litchi (খাঁটি রসালো লিচু)" 
+          class="max-h-[350px] w-auto object-contain transition-all duration-300"
+          :class="zoom ? 'opacity-0 scale-95' : 'opacity-100 scale-100'"
+        >
+        
+        <!-- Zoom Overlay (visible on hover) -->
+        <div 
+          x-show="zoom" 
+          class="absolute inset-0 bg-no-repeat transition-opacity duration-150 pointer-events-none"
+          :style="{
+            backgroundImage: `url('../${images[activeImageIdx]}')`,
+            backgroundPosition: bgPos,
+            backgroundSize: '200%'
+          }"
+          x-transition
+        ></div>
       </div>
-      <a href="shop" class="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-50 transition-colors group">
-        সব পণ্য দেখুন 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 group-hover:translate-x-1 transition-transform">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-        </svg>
-      </a>
+      
+      <!-- Thumbnails Selector -->
+      <div class="flex gap-2.5 mt-4 justify-center" x-show="images.length > 1">
+        <template x-for="(img, idx) in images" :key="idx">
+          <button 
+            @click="activeImageIdx = idx" 
+            class="w-16 h-16 rounded-xl overflow-hidden border-2 bg-white p-1 hover:border-brand-400 focus:outline-none transition-all duration-200"
+            :class="activeImageIdx === idx ? 'border-brand-500 ring-2 ring-brand-100' : 'border-slate-150'"
+          >
+            <img :src="'../' + img" alt="" class="w-full h-full object-contain">
+          </button>
+        </template>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Right Column: Details -->
+    <div class="flex flex-col justify-center space-y-6">
       
+      <!-- Badges & Status -->
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 text-[10px] font-bold bg-brand-500 text-white rounded-full uppercase tracking-wider">নতুন</span><span class="px-2.5 py-1 text-[10px] font-bold bg-accent-orange text-white rounded-full uppercase tracking-wider">বেস্ট সেলার</span>
+        <span class="text-xs font-semibold text-emerald-500">
+          ● স্টকে আছে
+        </span>
+      </div>
+
+      <!-- Title & Price -->
+      <div class="space-y-2">
+        <h1 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600 leading-tight">Khaas Chapai Litchi (খাঁটি রসালো লিচু)</h1>
+        
+        <!-- Ratings -->
+        <div class="flex items-center gap-1.5 text-amber-400 text-sm">
+          <div class="flex items-center">
+            <template x-for="i in 5">
+              <svg class="w-4 h-4 fill-current" :class="i <= Math.round(rating) ? 'text-amber-400' : 'text-slate-200'" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </template>
+          </div>
+          <span class="text-slate-400 text-xs font-medium ml-1" x-text="'(' + reviewsCount + 'টি ক্রেতা রিভিউ)'">(0টি ক্রেতা রিভিউ)</span>
+        </div>
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- Pricing -->
+      <div class="flex items-baseline gap-4">
+        <span class="text-3xl font-extrabold text-brand-600 font-serif">240 টাকা</span>
+        <span class="text-lg text-slate-400 line-through font-serif">280 টাকা</span>
+        <span class="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">প্রতি 100 pcs</span>
+      </div>
+
+      <!-- Description -->
+      <div class="text-sm text-slate-600 leading-relaxed font-sans whitespace-pre-line">
+        চাঁপাইনবাবগঞ্জের বাগান থেকে সদ্য পাড়া শতভাগ ফরমালিন ও রাসায়নিকমুক্ত মিষ্টি রসালো লিচু।
+      </div>
+
+      <hr class="border-slate-100">
+
+      <!-- Quantity Selector & Action Button -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center" x-show="true">
+        <!-- Qty Editor -->
+        <div class="flex items-center border border-slate-200 rounded-lg p-1 bg-slate-50 self-stretch sm:self-auto justify-center">
+          <button @click="qty = Math.max(1, qty - 1)" class="w-10 h-10 flex items-center justify-center text-slate-500 font-semibold hover:bg-white rounded transition-colors">-</button>
+          <span class="w-12 text-center text-sm font-bold text-slate-800" x-text="qty">1</span>
+          <button @click="qty = qty + 1" class="w-10 h-10 flex items-center justify-center text-slate-500 font-semibold hover:bg-white rounded transition-colors">+</button>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button @click="$dispatch('add-to-cart-event', { id: 'fresh-litchi', name: 'Khaas Chapai Litchi (খাঁটি রসালো লিচু)', price: 240, unit: '100 pcs', image: 'images/product-litchi.png', qty: qty })" 
+                class="flex-grow sm:flex-grow-0 sm:px-8 py-3.5 bg-brand-500 hover:bg-brand-600 text-white rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 self-stretch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          কার্টে যোগ করুন
+        </button>
+      </div>
+
+      <!-- Out of stock indicator -->
+      <div x-show="!true" class="bg-rose-50 border border-rose-100 text-rose-600 p-4 rounded-xl text-center text-sm font-semibold" x-cloak>
+        ⚠️ দুঃখিত, এই পণ্যটি বর্তমানে স্টকে নেই। আমরা নতুন ব্যাচ প্রস্তুত করছি!
+      </div>
+
+      <!-- Trust Badges Grid -->
+      <div class="grid grid-cols-2 gap-3 border-t border-slate-100 pt-5 font-sans">
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🛡️</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">ফরমালিন মুক্ত</h4>
+            <p class="text-[10px] text-slate-500">১০০% কেমিক্যাল মুক্ত</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🤝</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">ক্যাশ অন ডেলিভারি</h4>
+            <p class="text-[10px] text-slate-500">হাতে পেয়ে পেমেন্ট</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🔄</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">সহজ রিটার্ন</h4>
+            <p class="text-[10px] text-slate-500">২৪ ঘণ্টার মধ্যে সমাধান</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+          <span class="text-lg">🌾</span>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">সরাসরি বাগান থেকে</h4>
+            <p class="text-[10px] text-slate-500">চাঁপাইনবাবগঞ্জের নিজস্ব বাগান</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra Info -->
+      <div class="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-500 font-sans">
+        <div><span class="font-semibold">ক্যাটাগরি:</span> <a href="../category/fruits" class="text-brand-500 hover:underline">Fresh Fruits</a></div>
+        <div><span class="font-semibold">শিপিং:</span> দেশব্যাপী হোম ডেলিভারি বা লোকাল পিকআপ।</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Detailed Product Description Section -->
+<section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 font-sans">
+  <div class="bg-white rounded-3xl border border-brand-100 p-6 sm:p-10 shadow-xs space-y-6">
+    <h2 class="text-xl sm:text-2xl font-bold font-serif text-brand-600 flex items-center gap-2">
+      <span>📄</span> বিস্তারিত পণ্য বিবরণী
+    </h2>
+    <hr class="border-slate-100">
+    <div class="text-base text-slate-700 leading-relaxed whitespace-pre-line space-y-4">
+      Premium quality sweet and juicy red litchis directly sourced from the organic orchards of Chapai Nawabganj. 100% natural, chemical-free and freshly packed.
+    </div>
+  </div>
+</section>
+
+<!-- Reviews & Ratings Section -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 font-sans" x-data="productReviews('fresh-litchi', 0, 5)">
+  <h2 class="text-2xl font-bold font-serif text-brand-600 mb-8 flex items-center gap-2">
+    <span>⭐</span> ক্রেতা রিভিউ ও রেটিং
+  </h2>
+  
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <!-- Ratings Summary Card -->
+    <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-6 self-start">
+      <div class="text-center py-4 bg-brand-50/50 rounded-xl border border-brand-100/50">
+        <h3 class="text-5xl font-extrabold text-brand-600 font-serif" x-text="averageRating"></h3>
+        <div class="flex justify-center text-amber-400 my-2 text-lg">
+          <template x-for="i in 5">
+            <svg class="w-5 h-5 fill-current" :class="i <= Math.round(averageRating) ? 'text-amber-400' : 'text-slate-200'" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </template>
+        </div>
+        <p class="text-xs text-slate-500 font-medium font-sans" x-text="totalReviewsCount + 'টি ক্রেতা রেটিং এর উপর ভিত্তি করে'"></p>
+      </div>
+
+      <!-- Rating Progress Bars -->
+      <div class="space-y-3 font-sans text-xs">
+        <template x-for="star in [5, 4, 3, 2, 1]">
+          <div class="flex items-center gap-2">
+            <span class="w-3 font-semibold text-slate-600" x-text="star"></span>
+            <span class="text-amber-400">★</span>
+            <div class="flex-grow h-2.5 bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-full bg-brand-500 rounded-full transition-all duration-500" 
+                   :style="'width: ' + (totalReviewsCount ? (starsCount[star] / totalReviewsCount * 100) : 0) + '%'"></div>
+            </div>
+            <span class="w-6 text-right text-slate-400 font-medium" x-text="starsCount[star]"></span>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- Review Form Card -->
+    <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-4">
+      <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider font-serif">একটি রিভিউ লিখুন</h3>
+      
+      <div class="space-y-3 font-sans">
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">আপনার রেটিং দিন <span class="text-rose-500">*</span></label>
+          <div class="flex gap-1 text-slate-200">
+            <template x-for="star in [1, 2, 3, 4, 5]">
+              <button @click="newRating = star" class="text-2xl transition-colors cursor-pointer" 
+                      :class="star <= newRating ? 'text-amber-400' : 'text-slate-200'" aria-label="Rate star">★</button>
+            </template>
+          </div>
+        </div>
+
+        <div>
+          <label for="review-name" class="block text-xs font-semibold text-slate-500 mb-1">আপনার নাম <span class="text-rose-500">*</span></label>
+          <input type="text" id="review-name" x-model="newName" placeholder="যেমন: মারুফ আহমেদ" class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-1 focus:ring-brand-400 focus:border-brand-400">
+        </div>
+
+        <div>
+          <label for="review-text" class="block text-xs font-semibold text-slate-500 mb-1">আপনার রিভিউ <span class="text-rose-500">*</span></label>
+          <textarea id="review-text" x-model="newText" rows="3" placeholder="খাবারের স্বাদ, মান ও ডেলিভারি সম্পর্কে আপনার অভিজ্ঞতা লিখুন..." class="w-full text-sm border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-1 focus:ring-brand-400 focus:border-brand-400"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 mb-1">ছবি আপলোড করুন (ঐচ্ছিক)</label>
+          <div class="flex items-center gap-3">
+            <button type="button" @click="document.getElementById('review-image-upload').click()" class="px-4 py-2 border border-slate-200 hover:border-brand-400 hover:bg-brand-50/50 rounded-lg text-xs text-slate-600 font-semibold transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>📷</span> ছবি সিলেক্ট করুন
+            </button>
+            <input type="file" id="review-image-upload" accept="image/*" @change="handleImageSelect($event)" class="hidden">
+            
+            <template x-if="newImageBase64">
+              <div class="relative w-12 h-12 rounded-lg border border-slate-200 overflow-hidden bg-slate-50">
+                <img :src="newImageBase64" class="w-full h-full object-cover">
+                <button type="button" @click="removeSelectedImage()" class="absolute -top-1 -right-1 bg-rose-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[9px] hover:bg-rose-600" aria-label="Remove image">×</button>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <button @click="submitReview()" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-2.5 rounded-lg text-xs font-bold transition-all active:scale-98 shadow-sm">রিভিউ সাবমিট করুন</button>
+      </div>
+    </div>
+
+    <!-- Reviews List Card -->
+    <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-4 max-h-[500px] overflow-y-auto no-scrollbar">
+      <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wider font-serif">সাম্প্রতিক রিভিউসমূহ</h3>
+      
+      <div class="divide-y divide-slate-100 space-y-4">
+        <template x-if="reviews.length === 0">
+          <p class="text-xs text-slate-400 italic py-6 text-center">এখনো কোনো রিভিউ দেওয়া হয়নি। প্রথম রিভিউটি আপনিই দিন!</p>
+        </template>
+        
+        <template x-for="review in reviews">
+          <div class="pt-4 first:pt-0 space-y-2">
+            <div class="flex justify-between items-start font-sans">
+              <div>
+                <h4 class="text-xs font-bold text-slate-800" x-text="review.name"></h4>
+                <div class="flex text-amber-400 text-xs mt-0.5">
+                  <template x-for="i in 5">
+                    <span x-text="i <= review.rating ? '★' : '☆'"></span>
+                  </template>
+                </div>
+              </div>
+              <span class="text-[10px] text-slate-400" x-text="review.date"></span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed font-sans" x-text="review.text"></p>
+            <template x-if="review.image">
+              <div class="mt-2 max-w-[120px] rounded-lg overflow-hidden border border-slate-150 bg-slate-50 cursor-pointer hover:opacity-90 transition-opacity">
+                <img :src="review.image.startsWith('data:image/') ? review.image : '../' + review.image" 
+                     alt="Review image" 
+                     class="w-full h-auto object-contain max-h-[80px]"
+                     @click="window.open(review.image.startsWith('data:image/') ? review.image : '../' + review.image, '_blank')">
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Related Products -->
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100">
+  <h2 class="text-2xl font-bold font-serif text-brand-600 mb-8">সম্পর্কিত পণ্যসমূহ</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    
   <div class="product-card-item bg-white rounded-2xl border border-brand-100 p-4 hover-glow flex flex-col justify-between group relative transition-custom"
        data-category="fruits"
        data-price="150"
@@ -217,8 +461,8 @@
     </div>
     
     <!-- Image -->
-    <a href="product/himsagar-mango" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
-      <img src="images/product-mango.jpg" alt="Khaas Himsagar Mango" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+    <a href="../product/himsagar-mango" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+      <img src="../images/product-mango.jpg" alt="Khaas Himsagar Mango" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
     <!-- Details -->
@@ -228,7 +472,7 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(3)</span>
         </div>
-        <a href="product/himsagar-mango" class="block mt-1">
+        <a href="../product/himsagar-mango" class="block mt-1">
           <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Khaas Himsagar Mango</h3>
         </a>
       </div>
@@ -257,10 +501,10 @@
   </div>
   
   <div class="product-card-item bg-white rounded-2xl border border-brand-100 p-4 hover-glow flex flex-col justify-between group relative transition-custom"
-       data-category="dryfoods"
-       data-price="450"
-       data-rating="4.7"
-       data-name="Chapai Aamshotto / Mango Bar"
+       data-category="fruits"
+       data-price="90"
+       data-rating="4"
+       data-name="Fresh Local Guava"
        data-in-stock="true"
        data-index="1">
        
@@ -268,24 +512,24 @@
     <div class="absolute top-4 left-4 z-10 flex flex-col gap-1">
       
     
-    <span class="px-2.5 py-1 text-[10px] font-bold bg-accent-orange text-white rounded-full uppercase tracking-wider">বেস্ট সেলার</span>
+    
   
     </div>
     
     <!-- Image -->
-    <a href="product/chapai-aamshotto" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
-      <img src="images/product-aampapad.jpg" alt="Chapai Aamshotto / Mango Bar" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+    <a href="../product/fresh-guava" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+      <img src="../images/product-guava.jpg" alt="Fresh Local Guava" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
     <!-- Details -->
     <div class="space-y-2 flex-grow flex flex-col justify-between">
       <div>
         <div class="flex items-center gap-1 text-amber-400 text-xs">
-          ★★★★★
-          <span class="text-slate-400 font-medium ml-1">(3)</span>
+          ★★★★☆
+          <span class="text-slate-400 font-medium ml-1">(1)</span>
         </div>
-        <a href="product/chapai-aamshotto" class="block mt-1">
-          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Chapai Aamshotto / Mango Bar</h3>
+        <a href="../product/fresh-guava" class="block mt-1">
+          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Fresh Local Guava</h3>
         </a>
       </div>
 
@@ -294,125 +538,13 @@
         <div class="flex flex-col">
           <span class="text-[10px] text-slate-400 font-medium font-sans">প্রতি kg</span>
           <div class="flex items-baseline gap-1.5">
-            <span class="text-base font-bold text-brand-600 font-serif">450 টাকা</span>
-            <span class="text-xs text-slate-400 line-through font-serif">500 টাকা</span>
+            <span class="text-base font-bold text-brand-600 font-serif">90 টাকা</span>
+            <span class="text-xs text-slate-400 line-through font-serif">120 টাকা</span>
           </div>
         </div>
 
         
-        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'chapai-aamshotto', name: 'Chapai Aamshotto / Mango Bar', price: 450, unit: 'kg', image: 'images/product-aampapad.jpg', qty: 1 } }))"
-                class="w-9 h-9 rounded-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white flex items-center justify-center transition-all shadow-xs border border-brand-100 hover:border-brand-500 cursor-pointer" 
-                aria-label="Add to cart">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-          </svg>
-        </button>
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="product-card-item bg-white rounded-2xl border border-brand-100 p-4 hover-glow flex flex-col justify-between group relative transition-custom"
-       data-category="pickles"
-       data-price="280"
-       data-rating="5"
-       data-name="Handmade Garlic Mango Pickle"
-       data-in-stock="true"
-       data-index="2">
-       
-    <!-- Badges -->
-    <div class="absolute top-4 left-4 z-10 flex flex-col gap-1">
-      
-    <span class="px-2.5 py-1 text-[10px] font-bold bg-brand-500 text-white rounded-full uppercase tracking-wider">নতুন</span>
-    <span class="px-2.5 py-1 text-[10px] font-bold bg-accent-orange text-white rounded-full uppercase tracking-wider">বেস্ট সেলার</span>
-  
-    </div>
-    
-    <!-- Image -->
-    <a href="product/garlic-mango-pickle" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
-      <img src="images/product-pickle.jpg" alt="Handmade Garlic Mango Pickle" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-    </a>
-
-    <!-- Details -->
-    <div class="space-y-2 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-1 text-amber-400 text-xs">
-          ★★★★★
-          <span class="text-slate-400 font-medium ml-1">(1)</span>
-        </div>
-        <a href="product/garlic-mango-pickle" class="block mt-1">
-          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Handmade Garlic Mango Pickle</h3>
-        </a>
-      </div>
-
-      <!-- Pricing & Actions -->
-      <div class="flex items-center justify-between pt-3 border-t border-slate-50">
-        <div class="flex flex-col">
-          <span class="text-[10px] text-slate-400 font-medium font-sans">প্রতি packet</span>
-          <div class="flex items-baseline gap-1.5">
-            <span class="text-base font-bold text-brand-600 font-serif">280 টাকা</span>
-            <span class="text-xs text-slate-400 line-through font-serif">320 টাকা</span>
-          </div>
-        </div>
-
-        
-        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'garlic-mango-pickle', name: 'Handmade Garlic Mango Pickle', price: 280, unit: 'packet', image: 'images/product-pickle.jpg', qty: 1 } }))"
-                class="w-9 h-9 rounded-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white flex items-center justify-center transition-all shadow-xs border border-brand-100 hover:border-brand-500 cursor-pointer" 
-                aria-label="Add to cart">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-          </svg>
-        </button>
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="product-card-item bg-white rounded-2xl border border-brand-100 p-4 hover-glow flex flex-col justify-between group relative transition-custom"
-       data-category="sweets"
-       data-price="650"
-       data-rating="5"
-       data-name="Chapai Special Sandesh"
-       data-in-stock="true"
-       data-index="3">
-       
-    <!-- Badges -->
-    <div class="absolute top-4 left-4 z-10 flex flex-col gap-1">
-      
-    
-    <span class="px-2.5 py-1 text-[10px] font-bold bg-accent-orange text-white rounded-full uppercase tracking-wider">বেস্ট সেলার</span>
-  
-    </div>
-    
-    <!-- Image -->
-    <a href="product/special-sandesh" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
-      <img src="images/product-sandesh.jpg" alt="Chapai Special Sandesh" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-    </a>
-
-    <!-- Details -->
-    <div class="space-y-2 flex-grow flex flex-col justify-between">
-      <div>
-        <div class="flex items-center gap-1 text-amber-400 text-xs">
-          ★★★★★
-          <span class="text-slate-400 font-medium ml-1">(1)</span>
-        </div>
-        <a href="product/special-sandesh" class="block mt-1">
-          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Chapai Special Sandesh</h3>
-        </a>
-      </div>
-
-      <!-- Pricing & Actions -->
-      <div class="flex items-center justify-between pt-3 border-t border-slate-50">
-        <div class="flex flex-col">
-          <span class="text-[10px] text-slate-400 font-medium font-sans">প্রতি kg</span>
-          <div class="flex items-baseline gap-1.5">
-            <span class="text-base font-bold text-brand-600 font-serif">650 টাকা</span>
-            <span class="text-xs text-slate-400 line-through font-serif">700 টাকা</span>
-          </div>
-        </div>
-
-        
-        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'special-sandesh', name: 'Chapai Special Sandesh', price: 650, unit: 'kg', image: 'images/product-sandesh.jpg', qty: 1 } }))"
+        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'fresh-guava', name: 'Fresh Local Guava', price: 90, unit: 'kg', image: 'images/product-guava.jpg', qty: 1 } }))"
                 class="w-9 h-9 rounded-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white flex items-center justify-center transition-all shadow-xs border border-brand-100 hover:border-brand-500 cursor-pointer" 
                 aria-label="Add to cart">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
@@ -426,23 +558,23 @@
   
   <div class="product-card-item bg-white rounded-2xl border border-brand-100 p-4 hover-glow flex flex-col justify-between group relative transition-custom"
        data-category="fruits"
-       data-price="240"
+       data-price="99"
        data-rating="5"
-       data-name="Khaas Chapai Litchi (খাঁটি রসালো লিচু)"
+       data-name="Test Gallery Mango"
        data-in-stock="true"
-       data-index="4">
+       data-index="2">
        
     <!-- Badges -->
     <div class="absolute top-4 left-4 z-10 flex flex-col gap-1">
       
     <span class="px-2.5 py-1 text-[10px] font-bold bg-brand-500 text-white rounded-full uppercase tracking-wider">নতুন</span>
-    <span class="px-2.5 py-1 text-[10px] font-bold bg-accent-orange text-white rounded-full uppercase tracking-wider">বেস্ট সেলার</span>
+    
   
     </div>
     
     <!-- Image -->
-    <a href="product/fresh-litchi" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
-      <img src="images/product-litchi.png" alt="Khaas Chapai Litchi (খাঁটি রসালো লিচু)" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+    <a href="../product/test-gallery-mango" class="h-48 w-full bg-slate-50 rounded-xl overflow-hidden flex items-center justify-center p-3 mb-4">
+      <img src="../images/product-test-gallery-mango-1779422508528.gif" alt="Test Gallery Mango" loading="lazy" width="240" height="240" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
     </a>
 
     <!-- Details -->
@@ -452,23 +584,23 @@
           ★★★★★
           <span class="text-slate-400 font-medium ml-1">(0)</span>
         </div>
-        <a href="product/fresh-litchi" class="block mt-1">
-          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Khaas Chapai Litchi (খাঁটি রসালো লিচু)</h3>
+        <a href="../product/test-gallery-mango" class="block mt-1">
+          <h3 class="text-base font-bold text-slate-800 hover:text-brand-500 transition-colors leading-snug font-sans">Test Gallery Mango</h3>
         </a>
       </div>
 
       <!-- Pricing & Actions -->
       <div class="flex items-center justify-between pt-3 border-t border-slate-50">
         <div class="flex flex-col">
-          <span class="text-[10px] text-slate-400 font-medium font-sans">প্রতি 100 pcs</span>
+          <span class="text-[10px] text-slate-400 font-medium font-sans">প্রতি kg</span>
           <div class="flex items-baseline gap-1.5">
-            <span class="text-base font-bold text-brand-600 font-serif">240 টাকা</span>
-            <span class="text-xs text-slate-400 line-through font-serif">280 টাকা</span>
+            <span class="text-base font-bold text-brand-600 font-serif">99 টাকা</span>
+            <span class="text-xs text-slate-400 line-through font-serif">120 টাকা</span>
           </div>
         </div>
 
         
-        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'fresh-litchi', name: 'Khaas Chapai Litchi (খাঁটি রসালো লিচু)', price: 240, unit: '100 pcs', image: 'images/product-litchi.png', qty: 1 } }))"
+        <button onclick="window.dispatchEvent(new CustomEvent('add-to-cart-event', { detail: { id: 'test-gallery-mango', name: 'Test Gallery Mango', price: 99, unit: 'kg', image: 'images/product-test-gallery-mango-1779422508528.gif', qty: 1 } }))"
                 class="w-9 h-9 rounded-full bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white flex items-center justify-center transition-all shadow-xs border border-brand-100 hover:border-brand-500 cursor-pointer" 
                 aria-label="Add to cart">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
@@ -480,170 +612,166 @@
     </div>
   </div>
   
-    </div>
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center space-y-2 mb-16">
-    <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">কেন চাঁপাই ফ্রেশ</span>
-    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600">কেন চাঁপাই ফ্রেশ বেছে নেবেন!</h2>
-    <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full mt-4"></div>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    <!-- Card 1 -->
-    <div class="bg-white p-8 rounded-2xl border border-brand-100 hover-glow flex flex-col items-center text-center">
-      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6">🏆</div>
-      <h3 class="text-lg font-bold font-serif text-slate-800 mb-2">প্রিমিয়াম কোয়ালিটি</h3>
-      <p class="text-sm text-slate-500 leading-relaxed font-sans">প্রতিটি পণ্যের বিশুদ্ধতা, স্বাদ এবং প্রিমিয়াম গ্রেডিং মান কঠোরভাবে যাচাই করা হয়।</p>
-    </div>
-    <!-- Card 2 -->
-    <div class="bg-white p-8 rounded-2xl border border-brand-100 hover-glow flex flex-col items-center text-center">
-      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6">🌳</div>
-      <h3 class="text-lg font-bold font-serif text-slate-800 mb-2">সরাসরি বাগান থেকে</h3>
-      <p class="text-sm text-slate-500 leading-relaxed font-sans">কোনো মধ্যস্বত্বভোগী ছাড়াই সরাসরি স্থানীয় বাগান মালিক এবং প্রান্তিক চাষীদের থেকে সংগৃহীত।</p>
-    </div>
-    <!-- Card 3 -->
-    <div class="bg-white p-8 rounded-2xl border border-brand-100 hover-glow flex flex-col items-center text-center">
-      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6">🌿</div>
-      <h3 class="text-lg font-bold font-serif text-slate-800 mb-2">অর্গানিক ও প্রাকৃতিক</h3>
-      <p class="text-sm text-slate-500 leading-relaxed font-sans">আমাদের খাবারে কোনো রাসায়নিক রঙ, ক্ষতিকর প্রিজারভেটিভ বা কৃত্রিম পাকানোর উপাদান ব্যবহার করা হয় না।</p>
-    </div>
-    <!-- Card 4 -->
-    <div class="bg-white p-8 rounded-2xl border border-brand-100 hover-glow flex flex-col items-center text-center">
-      <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6">🚀</div>
-      <h3 class="text-lg font-bold font-serif text-slate-800 mb-2">দ্রুত ডেলিভারি</h3>
-      <p class="text-sm text-slate-500 leading-relaxed font-sans">আপনার দরজায় সতেজতা পৌঁছানো নিশ্চিত করতে ২৪-৪৮ ঘণ্টার মধ্যে যত্ন সহকারে প্যাকেজিং ও শিপিং করা হয়।</p>
-    </div>
-  </div>
-</section>
-
-<!-- Mango Season Banner -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-  <div class="relative rounded-3xl overflow-hidden bg-[#E28743] text-white shadow-xl min-h-[400px] flex items-center">
-    <!-- Content block -->
-    <div class="relative z-10 w-full lg:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6">
-      <span class="inline-flex self-start px-3 py-1 rounded-full text-xs font-bold bg-white/20 border border-white/20 text-white uppercase tracking-wider">
-        সীমিত সময়ের অফার
-      </span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold font-serif leading-tight">
-        চাঁপাইনবাবগঞ্জের বিখ্যাত<br>
-        <span class="text-accent-yellow">আমের মৌসুম</span> শুরু হয়েছে!
-      </h2>
-      <p class="text-white/95 text-sm sm:text-base leading-relaxed max-w-md font-sans">
-        ভোরে গাছ থেকে পাড়া এবং একই দিনে পাঠানো একদম তাজা ও মিষ্টি হিমসাগর, ল্যাংড়া এবং গোপালভোগ আম অর্ডার করুন।
-      </p>
-      <div>
-        <a href="category/fruits" class="inline-block px-8 py-3 bg-brand-500 text-white rounded-full font-bold shadow-lg hover:bg-brand-600 transition-all active:scale-98">
-          আম অর্ডার করুন
-        </a>
-      </div>
-    </div>
-    
-    <!-- Image block -->
-    <div class="absolute inset-0 lg:left-1/2 z-0">
-      <img src="images/seasonal-mangoes.jpg" loading="lazy" width="600" height="400" alt="Chapai Mangoes" class="w-full h-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-r from-[#E28743] via-[#E28743]/90 lg:via-[#E28743]/40 to-transparent"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials Section -->
-<section class="py-20 bg-brand-50/50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center space-y-2 mb-16">
-      <span class="text-xs font-bold text-accent-orange uppercase tracking-widest">ক্রেতাদের মতামত</span>
-      <h2 class="text-3xl sm:text-4xl font-bold font-serif text-brand-600">হাজারো মানুষের ভালোবাসা</h2>
-      <div class="w-16 h-1 bg-accent-orange mx-auto rounded-full mt-4"></div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<script>
+  function productReviews(productId, compiledCount, compiledRating) {
+    return {
+      productId: productId,
+      reviews: [],
+      newRating: 5,
+      newName: '',
+      newText: '',
+      newImageBase64: '',
+      newImageName: '',
+      totalReviewsCount: compiledCount || 0,
+      averageRating: compiledRating || 0,
+      starsCount: {5:0, 4:0, 3:0, 2:0, 1:0},
       
-  <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-4">
-    <div class="flex items-center gap-1 text-amber-400 text-sm">
-      ★★★★★
-    </div>
-    <p class="text-sm text-slate-600 leading-relaxed italic font-sans">"হিমসাগর আমগুলো সত্যিই অসাধারণ সুস্বাদু ছিল! কোনো আঁশ নেই, অসম্ভব মিষ্টি এবং ঘ্রাণে একদম খাঁটি। সবার জন্য অত্যন্ত প্রশংসনীয়!"</p>
-    <div class="flex items-center gap-3 pt-2">
-      <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold flex items-center justify-center text-xs">
-        আ
-      </div>
-      <div>
-        <h4 class="text-xs font-bold text-slate-800">আনিসুর রহমান</h4>
-        <p class="text-[10px] text-slate-400">ঢাকা • ১৫ মে, ২০২৬</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-4">
-    <div class="flex items-center gap-1 text-amber-400 text-sm">
-      ★★★★★
-    </div>
-    <p class="text-sm text-slate-600 leading-relaxed italic font-sans">"সন্দেশ এবং আমসত্ত্ব অর্ডার করেছিলাম। মিষ্টিগুলোতে চিনির পরিমাণ একদম পারফেক্ট ছিল এবং টেক্সচারটাও ছিল চমৎকার। ২৪ ঘণ্টার মধ্যেই সিলেটে প্যাকেজটি পেয়েছি!"</p>
-    <div class="flex items-center gap-3 pt-2">
-      <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold flex items-center justify-center text-xs">
-        ফ
-      </div>
-      <div>
-        <h4 class="text-xs font-bold text-slate-800">ফাহমিদা চৌধুরী</h4>
-        <p class="text-[10px] text-slate-400">সিলেট • ১০ মে, ২০২৬</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-white p-6 rounded-2xl border border-brand-100 shadow-xs space-y-4">
-    <div class="flex items-center gap-1 text-amber-400 text-sm">
-      ★★★★★
-    </div>
-    <p class="text-sm text-slate-600 leading-relaxed italic font-sans">"অসাধারণ কোয়ালিটি। আমের আচারটি একদম আমার দাদীর হাতের আচারের মতো লেগেছে। খাঁটি সরিষার তেলের চমৎকার ঘ্রাণ। নিঃসন্দেহে আবারো অর্ডার করব।"</p>
-    <div class="flex items-center gap-3 pt-2">
-      <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold flex items-center justify-center text-xs">
-        স
-      </div>
-      <div>
-        <h4 class="text-xs font-bold text-slate-800">সাদমান সাকিব</h4>
-        <p class="text-[10px] text-slate-400">চট্টগ্রাম • ১৮ মে, ২০২৬</p>
-      </div>
-    </div>
-  </div>
-  
-    </div>
-  </div>
-</section>
+      init() {
+        // Load dynamically compiled reviews from the database
+        const dbReviews = [] || [];
+        
+        // Load reviews submitted locally by this user in this browser
+        const localKey = 'chapai_reviews_local_' + this.productId;
+        const localSaved = localStorage.getItem(localKey);
+        const localReviews = localSaved ? JSON.parse(localSaved) : [];
+        
+        // Merge lists (local ones first for instant visitor feedback, then official database-managed ones)
+        // Deduplicate in case a review gets added to DB but exists locally
+        const filteredDb = dbReviews.filter(dbr => 
+          !localReviews.some(lr => lr.name === dbr.name && lr.text === dbr.text)
+        );
+        
+        this.reviews = [...localReviews, ...filteredDb];
+        
+        // Calculate dynamic count and rating purely based on this.reviews
+        this.totalReviewsCount = this.reviews.length;
+        if (this.totalReviewsCount > 0) {
+          const totalRating = this.reviews.reduce((sum, r) => sum + Number(r.rating), 0);
+          this.averageRating = Number((totalRating / this.totalReviewsCount).toFixed(1));
+        } else {
+          this.averageRating = 5.0;
+        }
 
-<!-- Heritage Story Banner -->
-<section class="relative py-28 text-white text-center bg-brand-950 overflow-hidden px-4">
-  <div class="absolute inset-0 z-0">
-    <img src="images/heritage-bg.jpg" loading="lazy" width="1200" height="600" alt="Chapai Nawabganj Heritage" class="w-full h-full object-cover object-center opacity-75">
-    <div class="absolute inset-0 bg-brand-950/40"></div>
-  </div>
-  
-  <div class="relative z-10 max-w-3xl mx-auto space-y-6">
-    <span class="text-xs font-bold text-accent-yellow uppercase tracking-widest">আমাদের ঐতিহ্য</span>
-    <h2 class="text-3xl sm:text-5xl font-extrabold font-serif tracking-tight text-white">চাঁপাইনবাবগঞ্জের ঐতিহ্যবাহী<br>খাবারের অনন্য স্বাদ</h2>
-    <div class="w-16 h-1 bg-accent-yellow mx-auto rounded-full mt-4"></div>
-    <p class="text-base text-brand-100/90 leading-relaxed font-sans max-w-xl mx-auto pt-2">
-      মহানন্দা নদীর তীরে গড়ে ওঠা চাঁপাইনবাবগঞ্জ শতাব্দী প্রাচীন অর্গানিক চাষাবাদ এবং মিষ্টি তৈরির ঐতিহ্যে সমৃদ্ধ। আমরা আপনার দোরগোড়ায় এই চমৎকার ঐতিহ্যের আসল স্বাদ পৌঁছে দিতে পেরে অত্যন্ত গর্বিত।
-    </p>
-  </div>
-</section>
+        this.generateStarsDistribution();
+        
+        // Sync with the top section
+        this.$nextTick(() => {
+          window.dispatchEvent(new CustomEvent('review-submitted', { 
+            detail: { count: this.totalReviewsCount, rating: this.averageRating } 
+          }));
+        });
+      },
+      
+      generateStarsDistribution() {
+        let dist = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0};
+        this.reviews.forEach(r => {
+          const rVal = Math.round(Number(r.rating));
+          if (dist[rVal] !== undefined) {
+            dist[rVal]++;
+          }
+        });
+        this.starsCount = dist;
+      },
+      
+      handleImageSelect(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        if (file.size > 2 * 1024 * 1024) { // 2MB limit
+          alert('অনুগ্রহ করে ২ মেগাবাইটের কম সাইজের ছবি নির্বাচন করুন।');
+          return;
+        }
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          this.newImageBase64 = e.target.result;
+          this.newImageName = file.name;
+        };
+        reader.readAsDataURL(file);
+      },
+      
+      removeSelectedImage() {
+        this.newImageBase64 = '';
+        this.newImageName = '';
+        const fileInput = document.getElementById('review-image-upload');
+        if (fileInput) fileInput.value = '';
+      },
+      
+      submitReview() {
+        if (!this.newName.trim()) {
+          alert('অনুগ্রহ করে আপনার নাম লিখুন।');
+          return;
+        }
+        if (!this.newText.trim()) {
+          alert('অনুগ্রহ করে আপনার মূল্যবান মতামত (রিভিউ) লিখুন।');
+          return;
+        }
+        
+        const newReview = {
+          name: this.newName.trim(),
+          rating: parseInt(this.newRating),
+          date: new Date().toLocaleDateString('bn-BD', { year: 'numeric', month: 'long', day: 'numeric' }),
+          text: this.newText.trim(),
+          image: this.newImageBase64 ? this.newImageBase64 : ''
+        };
+        
+        // Add to local browser storage so the customer sees it instantly
+        const localKey = 'chapai_reviews_local_' + this.productId;
+        const localSaved = localStorage.getItem(localKey);
+        const localReviews = localSaved ? JSON.parse(localSaved) : [];
+        localReviews.unshift(newReview);
+        localStorage.setItem(localKey, JSON.stringify(localReviews));
+        
+        this.reviews.unshift(newReview);
+        
+        // Calculate new count and average rating purely from this.reviews
+        this.totalReviewsCount = this.reviews.length;
+        const totalRating = this.reviews.reduce((sum, r) => sum + Number(r.rating), 0);
+        this.averageRating = Number((totalRating / this.totalReviewsCount).toFixed(1));
+        
+        // Re-generate stars distribution
+        this.generateStarsDistribution();
+        
+        // Dispatch the custom event to sync with the top section
+        window.dispatchEvent(new CustomEvent('review-submitted', { 
+          detail: { count: this.totalReviewsCount, rating: this.averageRating } 
+        }));
 
-<!-- Newsletter Section -->
-<section class="py-20 max-w-4xl mx-auto px-4 text-center">
-  <div class="bg-white p-8 sm:p-12 rounded-3xl border border-brand-100 shadow-xl space-y-6">
-    <div class="w-12 h-12 bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mx-auto rounded-full">✉️</div>
-    <div class="space-y-2">
-      <h3 class="text-2xl font-bold font-serif text-brand-600">মৌসুমি অফার ও আপডেট পান</h3>
-      <p class="text-sm text-slate-500 font-sans max-w-md mx-auto">তাজা আম এবং মৌসুমি মিষ্টির স্টকের নিয়মিত আপডেট পেতে আমাদের নিউজলেটারে সাবস্ক্রাইব করুন।</p>
-    </div>
-    <form onsubmit="event.preventDefault(); alert('সাবস্ক্রাইব করার জন্য আপনাকে ধন্যবাদ!'); this.reset();" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto pt-2">
-      <input type="email" required placeholder="আপনার ইমেইল এড্রেস লিখুন" class="flex-grow text-sm border border-slate-200 rounded-full px-5 py-3.5 focus:ring-1 focus:ring-brand-400 focus:border-brand-400 outline-none">
-      <button type="submit" class="px-6 py-3.5 bg-brand-500 hover:bg-brand-600 text-white rounded-full font-semibold text-sm transition-all shadow-sm">সাবস্ক্রাইব</button>
-    </form>
-  </div>
-</section>
+        // Submit to local server to persist and compile if served from the CMS server
+        fetch('http://localhost:8085/api/reviews/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            productId: this.productId,
+            name: newReview.name,
+            rating: newReview.rating,
+            date: newReview.date,
+            text: newReview.text,
+            imageData: this.newImageBase64 ? this.newImageBase64 : null,
+            imageName: this.newImageName ? this.newImageName : null
+          })
+        }).then(res => {
+          if (res.ok) {
+            console.log('Review persisted in site database successfully!');
+          }
+        }).catch(err => {
+          console.warn('CMS server not active for persistence:', err);
+        });
+        
+        // Reset form
+        this.newName = '';
+        this.newText = '';
+        this.newRating = 5;
+        this.removeSelectedImage();
+        
+        alert('আপনার রিভিউটি সফলভাবে সাবমিট করা হয়েছে। ধন্যবাদ!');
+      }
+    };
+  }
+</script>
 
   </main>
 
@@ -655,7 +783,7 @@
         <!-- Brand Info -->
         <div class="space-y-4">
           <div class="flex items-center gap-2.5">
-            <img src="images/logo/logo.png?v=1779424444992" alt="Chapai Fresh" class="w-9 h-9 object-contain">
+            <img src="../images/logo/logo.png?v=1779424445037" alt="Chapai Fresh" class="w-9 h-9 object-contain">
             <span class="text-2xl font-bold font-serif text-white tracking-tight">
               Chapai Fresh
             </span>
@@ -680,10 +808,10 @@
         <div class="space-y-4 font-sans">
           <h4 class="text-white text-base font-semibold tracking-wide font-sans">কুইক লিংক</h4>
           <ul class="space-y-2 text-sm text-brand-200/80">
-            <li><a href="home" class="hover:text-white transition-colors">হোম</a></li>
-            <li><a href="shop" class="hover:text-white transition-colors">শপ ক্যাটালগ</a></li>
-            <li><a href="about" class="hover:text-white transition-colors">আমাদের সম্পর্কে</a></li>
-            <li><a href="contact" class="hover:text-white transition-colors">যোগাযোগের বিবরণ</a></li>
+            <li><a href="../home" class="hover:text-white transition-colors">হোম</a></li>
+            <li><a href="../shop" class="hover:text-white transition-colors">শপ ক্যাটালগ</a></li>
+            <li><a href="../about" class="hover:text-white transition-colors">আমাদের সম্পর্কে</a></li>
+            <li><a href="../contact" class="hover:text-white transition-colors">যোগাযোগের বিবরণ</a></li>
           </ul>
         </div>
 
@@ -691,10 +819,10 @@
         <div class="space-y-4 font-sans">
           <h4 class="text-white text-base font-semibold tracking-wide font-sans">ক্যাটাগরি</h4>
           <ul class="space-y-2 text-sm text-brand-200/80">
-            <li><a href="category/fruits" class="hover:text-white transition-colors">Fresh Fruits</a></li>
-<li><a href="category/sweets" class="hover:text-white transition-colors">Traditional Sweets</a></li>
-<li><a href="category/pickles" class="hover:text-white transition-colors">Organic Pickles</a></li>
-<li><a href="category/dryfoods" class="hover:text-white transition-colors">Dry Foods</a></li>
+            <li><a href="../category/fruits" class="hover:text-white transition-colors">Fresh Fruits</a></li>
+<li><a href="../category/sweets" class="hover:text-white transition-colors">Traditional Sweets</a></li>
+<li><a href="../category/pickles" class="hover:text-white transition-colors">Organic Pickles</a></li>
+<li><a href="../category/dryfoods" class="hover:text-white transition-colors">Dry Foods</a></li>
 
           </ul>
         </div>
@@ -771,7 +899,7 @@
               <div x-show="cartItems.length > 0" class="divide-y divide-slate-100">
                 <template x-for="item in cartItems" :key="item.id">
                   <div class="flex py-4 gap-4">
-                    <img :src="'' + item.image" :alt="item.name" class="h-16 w-16 flex-none rounded-lg object-cover bg-slate-50 border border-slate-100">
+                    <img :src="'../' + item.image" :alt="item.name" class="h-16 w-16 flex-none rounded-lg object-cover bg-slate-50 border border-slate-100">
                     <div class="flex-auto">
                       <h4 class="text-sm font-semibold text-slate-800 font-sans leading-snug" x-text="item.name"></h4>
                       <p class="text-xs text-slate-400 mt-0.5" x-text="item.price + ' টাকা / ' + item.unit"></p>
@@ -893,7 +1021,7 @@
       <div class="p-6 border-b border-brand-50 bg-brand-50/50 flex justify-between items-center print:border-b-2 print:border-slate-200">
         <div>
           <div class="flex items-center gap-2">
-            <img src="images/logo/logo.png?v=1779424444992" alt="Chapai Fresh" class="w-6 h-6 object-contain">
+            <img src="../images/logo/logo.png?v=1779424445037" alt="Chapai Fresh" class="w-6 h-6 object-contain">
             <span class="text-xl font-bold font-serif text-brand-600">Chapai Fresh</span>
           </div>
           <p class="text-xs text-slate-400 font-sans mt-0.5">খাঁটি ও সুস্বাদু খাবারের ঠিকানা</p>
