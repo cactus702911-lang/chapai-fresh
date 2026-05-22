@@ -455,7 +455,7 @@
         }));
 
         // Submit to local server to persist and compile if served from the CMS server
-        fetch('http://localhost:8085/api/reviews/submit', {
+        fetch('/api/reviews/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

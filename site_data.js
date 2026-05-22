@@ -55,8 +55,8 @@ const siteData = {
         "images/seasonal-mangoes.jpg",
         "images/cat-fruits.jpg"
       ],
-      "rating": 4.7,
-      "reviewsCount": 3,
+      "rating": 4.5,
+      "reviewsCount": 4,
       "isBestSeller": true,
       "isNew": true,
       "inStock": true,
@@ -268,15 +268,6 @@ const siteData = {
     }
   ],
   "reviews": [
-    {
-      "productId": "himsagar-mango",
-      "name": "Test User",
-      "rating": 4,
-      "date": "২১ মে, ২০২৬",
-      "text": "খুবই ভালো আম!",
-      "id": "rev-1779387308116",
-      "image": "images/reviews/rev-1779387308116.png"
-    },
     {
       "productId": "chapai-aamshotto",
       "name": "new",

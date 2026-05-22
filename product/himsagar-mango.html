@@ -7,7 +7,7 @@
   <meta name="description" content="Authentic, chemical-free and fiberless Himsagar mangoes directly sourced from the finest orchards of Shibganj, Chapai Nawabganj. Highly sweet and pulp...">
   <link rel="preload" as="image" href="../images/product-mango.jpg" fetchpriority="high">
   <link href="../output.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../images/logo/favicon.png?v=1779425655296">
+  <link rel="icon" type="image/png" href="../images/logo/favicon.png?v=1779427750360">
   <!-- Alpine.js for interactive dropdowns, cart, mobile nav -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
@@ -44,7 +44,7 @@
         
         <!-- Logo -->
         <a href="../home" class="flex items-center gap-2 group">
-          <img src="../images/logo/logo.png?v=1779425655295" alt="Chapai Fresh" class="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300">
+          <img src="../images/logo/logo.png?v=1779427750360" alt="Chapai Fresh" class="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300">
           <span class="text-2xl font-bold font-serif tracking-tight text-brand-500 group-hover:text-brand-600 transition-colors">
             Chapai Fresh
           </span>
@@ -119,27 +119,12 @@
   },
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": 4.7,
-    "reviewCount": 3,
+    "ratingValue": 5,
+    "reviewCount": 2,
     "bestRating": "5",
     "worstRating": "1"
   },
   "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Test User"
-      },
-      "datePublished": "২১ মে, ২০২৬",
-      "reviewBody": "খুবই ভালো আম!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 4,
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    },
     {
       "@type": "Review",
       "author": {
@@ -190,8 +175,8 @@
 <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" 
          x-data="{ 
            qty: 1, 
-           reviewsCount: 3, 
-           rating: 4.7,
+           reviewsCount: 2, 
+           rating: 5,
            images: ['images/product-mango.jpg','images/seasonal-mangoes.jpg','images/cat-fruits.jpg'],
            activeImageIdx: 0,
            zoom: false,
@@ -273,7 +258,7 @@
               </svg>
             </template>
           </div>
-          <span class="text-slate-400 text-xs font-medium ml-1" x-text="'(' + reviewsCount + 'টি ক্রেতা রিভিউ)'">(3টি ক্রেতা রিভিউ)</span>
+          <span class="text-slate-400 text-xs font-medium ml-1" x-text="'(' + reviewsCount + 'টি ক্রেতা রিভিউ)'">(2টি ক্রেতা রিভিউ)</span>
         </div>
       </div>
 
@@ -373,7 +358,7 @@
 </section>
 
 <!-- Reviews & Ratings Section -->
-<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 font-sans" x-data="productReviews('himsagar-mango', 3, 4.7)">
+<section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-100 font-sans" x-data="productReviews('himsagar-mango', 2, 5)">
   <h2 class="text-2xl font-bold font-serif text-brand-600 mb-8 flex items-center gap-2">
     <span>⭐</span> ক্রেতা রিভিউ ও রেটিং
   </h2>
@@ -631,7 +616,7 @@
       
       init() {
         // Load dynamically compiled reviews from the database
-        const dbReviews = [{"productId":"himsagar-mango","name":"Test User","rating":4,"date":"২১ মে, ২০২৬","text":"খুবই ভালো আম!","id":"rev-1779387308116","image":"images/reviews/rev-1779387308116.png"},{"id":"rev-1","productId":"himsagar-mango","name":"Anisur Rahman","rating":5,"date":"মে ১৫, ২০২৬","text":"হিমসাগর আমগুলো সত্যিই খুব মিষ্টি এবং আঁশবিহীন ছিল। গন্ধটাও ছিল চমৎকার!"},{"id":"rev-2","productId":"himsagar-mango","name":"Rafiqul Islam","rating":5,"date":"মে ১০, ২০২৬","text":"অর্ডার করার পরদিনই ঢাকাতে ডেলিভারি পেয়েছি। একদম তাজা আম!"}] || [];
+        const dbReviews = [{"id":"rev-1","productId":"himsagar-mango","name":"Anisur Rahman","rating":5,"date":"মে ১৫, ২০২৬","text":"হিমসাগর আমগুলো সত্যিই খুব মিষ্টি এবং আঁশবিহীন ছিল। গন্ধটাও ছিল চমৎকার!"},{"id":"rev-2","productId":"himsagar-mango","name":"Rafiqul Islam","rating":5,"date":"মে ১০, ২০২৬","text":"অর্ডার করার পরদিনই ঢাকাতে ডেলিভারি পেয়েছি। একদম তাজা আম!"}] || [];
         
         // Load reviews submitted locally by this user in this browser
         const localKey = 'chapai_reviews_local_' + this.productId;
@@ -741,7 +726,7 @@
         }));
 
         // Submit to local server to persist and compile if served from the CMS server
-        fetch('http://localhost:8085/api/reviews/submit', {
+        fetch('/api/reviews/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -783,7 +768,7 @@
         <!-- Brand Info -->
         <div class="space-y-4">
           <a href="../home" class="flex items-center gap-2.5 group">
-            <img src="../images/logo/logo.png?v=1779425655295" alt="Chapai Fresh" class="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300">
+            <img src="../images/logo/logo.png?v=1779427750360" alt="Chapai Fresh" class="w-12 h-12 object-contain group-hover:scale-105 transition-transform duration-300">
             <span class="text-2xl font-bold font-serif text-brand-400 tracking-tight group-hover:text-brand-300 transition-colors">
               Chapai Fresh
             </span>
@@ -1021,7 +1006,7 @@
       <div class="p-6 border-b border-brand-50 bg-brand-50/50 flex justify-between items-center print:border-b-2 print:border-slate-200">
         <div>
           <div class="flex items-center gap-2">
-            <img src="../images/logo/logo.png?v=1779425655295" alt="Chapai Fresh" class="w-8 h-8 object-contain">
+            <img src="../images/logo/logo.png?v=1779427750360" alt="Chapai Fresh" class="w-8 h-8 object-contain">
             <span class="text-xl font-bold font-serif text-brand-600">Chapai Fresh</span>
           </div>
           <p class="text-xs text-slate-400 font-sans mt-0.5">খাঁটি ও সুস্বাদু খাবারের ঠিকানা</p>
